@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BirdScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     public bool IsAlive = true;
     public Rigidbody2D rb2D;

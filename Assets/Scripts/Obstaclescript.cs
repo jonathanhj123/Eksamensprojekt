@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PipeMovement : MonoBehaviour
+public class Obstaclescript : MonoBehaviour
 {
     public GameObject player;
     public float movementspeed = 10;
