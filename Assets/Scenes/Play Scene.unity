@@ -762,7 +762,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawnerScript
   player: {fileID: 523035310}
-  Groundobstacles: []
+  Groundobstacles:
+  - {fileID: 5592770724378068415, guid: 32af7e78634e7c149ac98ef563d7e8f6, type: 3}
+  - {fileID: 3725518400749149289, guid: 9c28bc51cf85bdf46aa6d72c5f56a0f4, type: 3}
+  - {fileID: 194722267000856875, guid: 04f07995c2221e44082b11f60a562e14, type: 3}
+  - {fileID: 3867684116020433588, guid: b8c03cdb18a18e14b8341e2917225558, type: 3}
   Airobstacles: []
   spawnRate: 2
 --- !u!4 &1062519650
