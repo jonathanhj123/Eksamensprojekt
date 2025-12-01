@@ -13,5 +13,6 @@ public enum EquipSlot
     Head,
     Body,
     Hand,
+    Accessory
 }
 
