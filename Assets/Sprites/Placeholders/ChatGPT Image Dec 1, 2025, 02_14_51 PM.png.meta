@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: dc5761c2f0b691d44917d7528652c225
+guid: 56f336f1fc78c1047b7959ac92b2ba79
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6981827254641702772
-    second: cloud_0
-  - first:
-      213: -2459163954622720782
-    second: cloud_1
-  - first:
-      213: -7977753516566349660
-    second: cloud_2
-  - first:
-      213: -1962646913366674424
-    second: cloud_3
+      213: -4313059993097781543
+    second: ChatGPT Image Dec 1, 2025, 02_14_51 PM_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -148,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cloud_0
+      name: ChatGPT Image Dec 1, 2025, 02_14_51 PM_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 826
-        width: 468
-        height: 104
+        x: 63
+        y: 57
+        width: 894
+        height: 663
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,74 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c88c0fb6a119b1f90800000000000000
-      internalID: -6981827254641702772
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cloud_1
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 856
-        width: 681
-        height: 145
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f49448996b4fddd0800000000000000
-      internalID: -2459163954622720782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cloud_2
-      rect:
-        serializedVersion: 2
-        x: 817
-        y: 843
-        width: 661
-        height: 171
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a87073d173594190800000000000000
-      internalID: -7977753516566349660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cloud_3
-      rect:
-        serializedVersion: 2
-        x: 1320
-        y: 826
-        width: 577
-        height: 152
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8043345e70743c4e0800000000000000
-      internalID: -1962646913366674424
+      spriteID: 9de3570b9cee424c0800000000000000
+      internalID: -4313059993097781543
       vertices: []
       indices: 
       edges: []
@@ -249,10 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cloud_0: -6981827254641702772
-      cloud_1: -2459163954622720782
-      cloud_2: -7977753516566349660
-      cloud_3: -1962646913366674424
+      ChatGPT Image Dec 1, 2025, 02_14_51 PM_0: -4313059993097781543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
