@@ -5,13 +5,13 @@ public class PlayerScript : MonoBehaviour
     public bool IsAlive = true;
     public Rigidbody2D rb2D;
     public float Movementspeed = 10;
-  //  private Animator anim;
+    private Animator anim;
 
-   // public LogicManager logic;
+    public LogicScript logic;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-  //      logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
   //      anim = gameObject.GetComponent<Animator>();
     }
 
