@@ -5,14 +5,14 @@ public class BirdScript : MonoBehaviour
     public bool IsAlive = true;
     public Rigidbody2D rb2D;
     public float Movementspeed = 10;
-    private Animator anim;
+  //  private Animator anim;
 
    // public LogicManager logic;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
   //      logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
-        anim = gameObject.GetComponent<Animator>();
+  //      anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class BirdScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D bird)
     {
-        die();
+   //     die();
     }
 
     public void die()
@@ -39,7 +39,7 @@ public class BirdScript : MonoBehaviour
     {
         if (IsAlive)
         {
-            anim.Play("Jumping", 0, 0.25f);
+ //           anim.Play("Jumping", 0, 0.25f);
             rb2D.linearVelocity = Vector2.up * Movementspeed;
         }
     }
