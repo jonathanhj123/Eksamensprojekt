@@ -32,6 +32,11 @@ public class Obstaclescript : MonoBehaviour
         {
             DestroyObject();
         }
+
+        if(checkForPlayer())
+        {
+            killPlayer();
+        }
         Debug.DrawRay(transform.position, Vector2.up * rayLength, Color.red);
 
     }
@@ -49,6 +54,8 @@ public class Obstaclescript : MonoBehaviour
 
     private void killPlayer()
     {
-        
+        // Dræb spiller
+
+        DestroyObject(player);
     }
 }

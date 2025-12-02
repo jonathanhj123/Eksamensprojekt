@@ -153,4 +153,4 @@ MonoBehaviour:
   player: {fileID: 0}
   movementspeed: 10
   deadZone: -12
-  rayLength: 0.81
+  rayLength: 0.82
