@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private float scoremultiplier;
    // [SerializeField] private AudioClip backgroundMusic;
     public static GameManager Instance;
+    public TextMeshProUGUI scoreText;
+    private int castInt;
 
 
     void Awake()
@@ -28,9 +30,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameData.Instance.GameRunning) {
-            GameData.Instance.RoundScore += Time.deltaTime * scoremultiplier;
-        }   
+ //       if(GameData.Instance.GameRunning) {
+            GameData.Instance.RoundScore += Time.deltaTime * scoremultiplier; 
+            scoreText.text = "Score : " + (int)GameData.Instance.RoundScore;    
+//        }
     }
     
     public void StartGame() {
@@ -49,7 +52,7 @@ public class GameManager : MonoBehaviour
             scoremultiplier = 1.25f;
         }
         if (GameData.Instance.Difficulty == "Hard") {
-            scoremultiplier = 1.5f;
+            scoremultiplier = 2f;
         }
     }
 

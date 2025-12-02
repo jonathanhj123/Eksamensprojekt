@@ -31,7 +31,7 @@ public class GameData : MonoBehaviour
             Highscore = 0;
             LastTotalCoins = 0;
             NewTotalCoins = 0;
-            Difficulty = "Easy";
+            Difficulty = "Hard";
             GameRunning = false;
             NewHighscoreWasSest = false;
         } 
