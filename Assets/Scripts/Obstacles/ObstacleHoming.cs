@@ -5,7 +5,7 @@ public class ObstacleHoming : MonoBehaviour
 {
     //Variable
 
-    //Sætter objektets bevægelseshastighed til 3 enheder per sekund.
+    //Sætter objektets bevægelseshastighed til 3 enheder per sekund, men kan ændres i inspector.
     public float moveSpeed = 3f;
     
     //Definerer en Transform-variabel kaldet targetTransform, som vil blive brugt til at angive målets position.
@@ -24,11 +24,8 @@ public class ObstacleHoming : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Beregner retningen mod målet ved at trække objektets position fra målpositionen.
-        Vector2 direction = targetTransform.position - transform.position;
         
-        direction.Normalize();
+        transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, moveSpeed * Time.deltaTime);
 
-        transform.Translate(direction * moveSpeed * Time.deltaTime);
     }
 }
