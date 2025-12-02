@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections.Generic;
+using System.Collections;
 public class PlayerScript : MonoBehaviour
 {
     public bool IsAlive = true;
@@ -7,24 +8,16 @@ public class PlayerScript : MonoBehaviour
     public float Movementspeed = 10;
     private Animator anim;
 
-    public LogicScript logic;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        
   //      anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D bird)
-    {
-   //     die();
+        Debug.DrawRay(transform.position, Vector2.down * 2.4f, Color.red);
     }
 
     public void die()
@@ -32,12 +25,16 @@ public class PlayerScript : MonoBehaviour
         IsAlive = false;
         Destroy(gameObject);
         Debug.Log("Bird is dead");
-//        logic.gameOver();
+    }
+
+    private bool getIsGrounded()
+    {
+        return Physics2D.Raycast(transform.position, Vector2.down, 2.4f, LayerMask.GetMask("Ground"));
     }
 
     public void OnJump()
     {
-        if (IsAlive)
+        if (IsAlive && getIsGrounded())
         {
  //           anim.Play("Jumping", 0, 0.25f);
             rb2D.linearVelocity = Vector2.up * Movementspeed;

@@ -6,6 +6,8 @@ public class Obstaclescript : MonoBehaviour
     public float movementspeed = 10;
     public float deadZone = -12;
     private PlayerScript playerscript;
+
+    public float rayLength;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void awake()
@@ -30,14 +32,23 @@ public class Obstaclescript : MonoBehaviour
         {
             DestroyObject();
         }
-
+        Debug.DrawRay(transform.position, Vector2.up * rayLength, Color.red);
 
     }
 
-    void DestroyObject()
+    private void DestroyObject()
     {
         Debug.Log("Pipe Destroyed");
         Destroy(gameObject);
     }
 
+    private bool checkForPlayer()
+    {
+        return Physics2D.Raycast(transform.position, Vector2.up, rayLength, LayerMask.GetMask("Player"));
+    }
+
+    private void killPlayer()
+    {
+        
+    }
 }

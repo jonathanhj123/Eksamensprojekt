@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
  //       if(GameData.Instance.GameRunning) {
             GameData.Instance.RoundScore += Time.deltaTime * scoremultiplier; 
-            scoreText.text = "Score : " + (int)GameData.Instance.RoundScore;    
+            scoreText.text = (int)GameData.Instance.RoundScore + " Meters";    
 //        }
     }
     
