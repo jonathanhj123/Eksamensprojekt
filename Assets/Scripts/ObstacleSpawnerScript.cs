@@ -44,11 +44,11 @@ public class ObstacleSpawnerScript : MonoBehaviour
 
     void spawnGroundObstacle()
     {
-    Instantiate(Groundobstacles[Random.Range(0,4)], new Vector3(transform.position.x, 3, 0), transform.rotation);
+    Instantiate(Groundobstacles[Random.Range(0,4)], new Vector3(transform.position.x, -3, 0), transform.rotation);
     } 
 
     void spawnAirObstacle()
     {
-    Instantiate(Airobstacles[Random.Range(0,4)], new Vector3(transform.position.x, -3, 0), transform.rotation);
+    Instantiate(Airobstacles[Random.Range(0,4)], new Vector3(transform.position.x, 3, 0), transform.rotation);
     }
 }
