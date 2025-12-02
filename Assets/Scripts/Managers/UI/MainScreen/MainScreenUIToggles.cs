@@ -1,24 +1,43 @@
 using UnityEngine;
+using TMPro;
 
 public class MainScreenUIToggles : MonoBehaviour
 {
-   [SerializeField] private GameObject mainScreenPanel;
-   [SerializeField] private GameObject statsPanel;
-   [SerializeField] private GameObject shopPanel;
+    [Header("MainScreen Objects")]
+    [SerializeField] private GameObject mainScreenPanel;
+    [SerializeField] private TextMeshProUGUI highscoreText;
+    [SerializeField] private TextMeshProUGUI coinsText;
+    [SerializeField] private GameObject settingsButton;
+    [SerializeField] private GameObject closeSettingsButton;
 
-   [SerializeField] private GameObject player;
-   [SerializeField] private Vector3 mainDinoPosition;
+    [Header("Shop Screen Objects")]
+    [SerializeField] private GameObject shopPanel;
+    [SerializeField] private GameObject closeShopButton;
 
+    [Header("Dino placement")]
+    [SerializeField] private GameObject player;
+    [SerializeField] private Vector3 mainDinoPosition;
+    [SerializeField] private Vector3 shopDinoPosition;
+
+    [Header("Settings script")]
+    [SerializeField] private SettingsUIToggle settingsToggle;
    
    void Awake() {
+    UpdateStatsPanel();
     player = GameObject.FindWithTag("Player");
     mainDinoPosition = player.transform.position;
+    shopDinoPosition = new Vector3(0.5f, 0.25f, 0f);
+    settingsToggle = GetComponent<SettingsUIToggle>();
    }
 
    public void ShowShopUI()
     {
+        mainScreenPanel.SetActive(false);
+        shopPanel.SetActive(true);
+        //closeShopButton.SetActive(true);
+        settingsToggle.changeSettingsButton();
 
-        
+        player.transform.position = shopDinoPosition;
       /*  if(buttonSettings.activeSelf) {
         settingsPanel.SetActive(true);
         changeSettingsButton();
@@ -32,10 +51,20 @@ public class MainScreenUIToggles : MonoBehaviour
         }*/
     }
 
-    public void GoToMainScreen() {
-        statsPanel.SetActive(true);
+    /*public void GoToMainScreen() {
         mainScreenPanel.SetActive(true);
         shopPanel.SetActive(false);
+        MoveDinosaurBack();
+        UpdateStatsPanel();
+    } */
+
+    public void MoveDinosaurBack() {
+        player.transform.position = mainDinoPosition;
+    }
+
+    public void UpdateStatsPanel() {
+    highscoreText.text = "Highscore : " + (int)GameData.Instance.Highscore; 
+    coinsText.text = "Coins : " + GameData.Instance.NewTotalCoins; 
     }
 }
 
