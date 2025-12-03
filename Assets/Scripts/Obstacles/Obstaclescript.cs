@@ -33,11 +33,6 @@ public class Obstaclescript : MonoBehaviour
             DestroyObject();
         }
 
-        if(checkForPlayer())
-        {
-            killPlayer();
-        }
-        Debug.DrawRay(transform.position, Vector2.up * rayLength, Color.red);
 
     }
 
@@ -46,16 +41,5 @@ public class Obstaclescript : MonoBehaviour
         Debug.Log("Pipe Destroyed");
         Destroy(gameObject);
     }
-
-    private bool checkForPlayer()
-    {
-        return Physics2D.Raycast(transform.position, Vector2.up, rayLength, LayerMask.GetMask("Player"));
-    }
-
-    private void killPlayer()
-    {
-        // Dræb spiller
-
-        DestroyObject(player);
-    }
+    
 }
