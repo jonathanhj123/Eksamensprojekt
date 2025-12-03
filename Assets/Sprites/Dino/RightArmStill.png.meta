@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 062bd55dec42b084790f8c66433c382c
+guid: 2b9b3c4072a5fe04c8613a5c90d95f97
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5051919691751918924
-    second: DinoRun_0003_0
+      213: -3062781872449697745
+    second: RightArmStill_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DinoRun_0003_0
+      name: RightArmStill_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 0
-        width: 414
-        height: 415
+        x: 227
+        y: 140
+        width: 120
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b2735b7ec9f3e9b0800000000000000
-      internalID: -5051919691751918924
+      spriteID: f2841244d10de75d0800000000000000
+      internalID: -3062781872449697745
       vertices: []
       indices: 
       edges: []
@@ -164,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DinoRun_0003_0: -5051919691751918924
+      RightArmStill_0: -3062781872449697745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
