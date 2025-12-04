@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff4cf5b7f36b9b04490a79e5ac2119f1
+guid: 9f060b7c97a996c4c9114d8b04a7a925
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7140851891182347008
-    second: Run_0002_0
+      213: -892006665834550169
+    second: BowlerHat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run_0002_0
+      name: BowlerHat_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 415
-        height: 416
+        x: 205
+        y: 334
+        width: 146
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00d5660f90996ec90800000000000000
-      internalID: -7140851891182347008
+      spriteID: 76ca6a9d9a4fe93f0800000000000000
+      internalID: -892006665834550169
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Run_0002_0: -7140851891182347008
+      BowlerHat_0: -892006665834550169
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
