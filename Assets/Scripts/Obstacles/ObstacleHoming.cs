@@ -40,4 +40,12 @@ public class ObstacleHoming : MonoBehaviour
         //transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, moveSpeed * Time.deltaTime);
 
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
