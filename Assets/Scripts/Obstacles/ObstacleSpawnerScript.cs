@@ -30,7 +30,7 @@ public class ObstacleSpawnerScript : MonoBehaviour
             {
                 if (GameData.Instance.RoundScore > 50)
                 {
-                    if (Random.Range(1,2) == 1)
+                    if (Random.Range(1,3) == 1)
                     {
                         spawnAirObstacle();
                         timer = 0;
