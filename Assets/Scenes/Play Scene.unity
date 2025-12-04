@@ -5091,6 +5091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigCactus
       objectReference: {fileID: 0}
+    - target: {fileID: 7472619886627683326, guid: 32af7e78634e7c149ac98ef563d7e8f6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5613,8 +5617,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.056052208}
-  m_Radius: 0.5560522
+  m_Offset: {x: 0.03090179, y: 0.05117303}
+  m_Radius: 0.6211087
 --- !u!50 &428184928
 Rigidbody2D:
   serializedVersion: 5

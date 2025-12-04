@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Meteor
   - Obstacle
+  - Bullet
   layers:
   - Default
   - TransparentFX
