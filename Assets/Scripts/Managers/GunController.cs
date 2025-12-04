@@ -6,6 +6,8 @@ public class GunController : MonoBehaviour
 {
     [SerializeField] private Transform gun;
     [SerializeField] private Animator gunAnim;
+    public Transform Shootpos;
+    public GameObject Bullet;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +22,7 @@ public class GunController : MonoBehaviour
     public void OnShoot()
     {
    //    gunAnim.SetTrigger("Shoot"); 
+    Instantiate(Bullet,Shootpos.position,Shootpos.rotation);
        Debug.Log("Pew pew");
     }
 }
