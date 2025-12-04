@@ -5409,7 +5409,8 @@ MonoBehaviour:
   - {fileID: 3725518400749149289, guid: 9c28bc51cf85bdf46aa6d72c5f56a0f4, type: 3}
   - {fileID: 194722267000856875, guid: 04f07995c2221e44082b11f60a562e14, type: 3}
   - {fileID: 3867684116020433588, guid: b8c03cdb18a18e14b8341e2917225558, type: 3}
-  Airobstacles: []
+  Airobstacles:
+  - {fileID: 3270261207016382736, guid: 5d00fe66ed995314591012797e649129, type: 3}
   spawnRate: 2
 --- !u!4 &403722667
 Transform:
@@ -5582,7 +5583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &428184927
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5613,7 +5614,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -6336,8 +6337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14199388e8d1dfb468c299fbfeb9def9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunController
-  gun: {fileID: 1298654134}
-  gunAnim: {fileID: 0}
+  gunPos: {fileID: 1298654134}
+  gun: {fileID: 1298654133}
   Shootpos: {fileID: 2004195815}
   Bullet: {fileID: 4272878988566155731, guid: da60f857a32c3754caff22256b0e4b27, type: 3}
 --- !u!1 &619394800
@@ -6712,13 +6713,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2250747532764642121, guid: da60f857a32c3754caff22256b0e4b27, type: 3}
+      propertyPath: BulletSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029479506250731844, guid: da60f857a32c3754caff22256b0e4b27, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3308860452955419354, guid: da60f857a32c3754caff22256b0e4b27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.17
+      value: -2.47
       objectReference: {fileID: 0}
     - target: {fileID: 3308860452955419354, guid: da60f857a32c3754caff22256b0e4b27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.93
+      value: 6.23
       objectReference: {fileID: 0}
     - target: {fileID: 3308860452955419354, guid: da60f857a32c3754caff22256b0e4b27, type: 3}
       propertyPath: m_LocalPosition.z

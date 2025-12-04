@@ -6,8 +6,9 @@ public class CharacterEquipment : MonoBehaviour
     [Header("Attachment points")]
     public Transform headSlot;
     public Transform bodySlot;
-    public Transform handSlot;
+    public Transform leftHandSlot;
     public Transform accessorySlot;
+    public Transform weaponSlot;
 
     private Dictionary<EquipSlot, ItemData> equippedItems = new();
     private Dictionary<EquipSlot, GameObject> ingameVisuals = new();
@@ -69,18 +70,20 @@ public class CharacterEquipment : MonoBehaviour
         {
             EquipSlot.Head => headSlot,
             EquipSlot.Body => bodySlot,
-            EquipSlot.Hand => handSlot,
+            EquipSlot.LeftHand => leftHandSlot,
             EquipSlot.Accessory => accessorySlot,
+            EquipSlot.Weapon => weaponSlot,
             _ => null
         };
     }
 
-    public void ApplyLoadout(PremadeSkin loadout) //For premade loadouts
+    public void ApplyLoadout(PremadeLoadout loadout) //For premade loadouts
 {
-    if (loadout.head)   Equip(loadout.head);
-    if (loadout.body)   Equip(loadout.body);
-    if (loadout.hand)   Equip(loadout.hand);
-    if (loadout.accessory) Equip(loadout.accessory);
+    if (loadout.head)       Equip(loadout.head);
+    if (loadout.body)       Equip(loadout.body);
+    if (loadout.lefthand)   Equip(loadout.lefthand);
+    if (loadout.accessory)  Equip(loadout.accessory);
+    if (loadout.weapon)     Equip(loadout.weapon);
 }
 
     public void ApplyFromData(CharacterEquipmentData data)

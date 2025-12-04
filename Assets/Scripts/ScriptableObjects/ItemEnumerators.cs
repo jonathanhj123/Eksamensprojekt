@@ -4,15 +4,17 @@ public enum ItemCategory
 {
     Hat,
     Clothing,
-    Weapon,
-    Accessory
+    Lefthand,
+    Accessory,
+    Weapon
 }
 
 public enum EquipSlot
 {
     Head,
     Body,
-    Hand,
-    Accessory
+    LeftHand,
+    Accessory,
+    Weapon
 }
 

@@ -34,7 +34,6 @@ public class MainScreenUIToggles : MonoBehaviour
     {
         mainScreenPanel.SetActive(false);
         shopPanel.SetActive(true);
-        //closeShopButton.SetActive(true);
         settingsToggle.changeSettingsButton();
 
         player.transform.position = shopDinoPosition;
