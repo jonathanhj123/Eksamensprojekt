@@ -56,5 +56,11 @@ TagManager:
   - name: Player
     uniqueID: 614011091
     locked: 0
+  - name: Clothing
+    uniqueID: 432031715
+    locked: 0
+  - name: Weapon
+    uniqueID: 569970391
+    locked: 0
   m_RenderingLayers:
   - Default
