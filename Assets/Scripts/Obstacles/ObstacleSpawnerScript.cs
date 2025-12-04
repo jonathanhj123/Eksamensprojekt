@@ -28,14 +28,18 @@ public class ObstacleSpawnerScript : MonoBehaviour
             }
             else
             {
- //               if (GameData.score > 50)
- //               {
- //                   if (Random.Range(0,1) == 1)
- //                   {
- //                       spawnAirObstacle();
- //                       timer = 0;
- //                   }
- //               } else
+                if (GameData.Instance.RoundScore > 50)
+                {
+                    if (Random.Range(1,2) == 1)
+                    {
+                        spawnAirObstacle();
+                        timer = 0;
+                    } else
+                    {
+                        spawnGroundObstacle();
+                        timer = 0;
+                    }
+                } else
                 spawnGroundObstacle();
                 timer = 0;
             }

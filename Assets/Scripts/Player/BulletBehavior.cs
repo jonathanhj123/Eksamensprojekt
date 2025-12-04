@@ -7,6 +7,11 @@ public class BulletBehavior : MonoBehaviour
     
     private Rigidbody2D rb;
     public int BulletSpeed;
+
+    void Awake()
+    {
+        Destroy(gameObject,2f);
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,7 +24,7 @@ public class BulletBehavior : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground" ||
         collision.gameObject.tag == "Obstacle")
@@ -27,9 +32,7 @@ public class BulletBehavior : MonoBehaviour
             Destroy(gameObject);
           // StartCoroutine(playHitAnimation());
         }
-        else if(collision.gameObject.tag == "Wall") {
-            Destroy(gameObject);
-        }
+
     }
     private IEnumerator playHitAnimation()
     {
