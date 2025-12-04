@@ -16,6 +16,14 @@ public class ObstacleFlying : MonoBehaviour
     // Bool til at sikre, at den ikke starter med at dykke.
     private bool isDiving = false;
 
+    //Variable til animator
+    Animator animator;
+
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,9 +33,12 @@ public class ObstacleFlying : MonoBehaviour
         {
             // Flyver til venstre
             transform.Translate(Vector2.left * flySpeed * Time.deltaTime);
+            //Laver animationen til flve
+            animator.SetBool("isDiving", false);
 
             // Raycast til at tjekke for spilleren og sænker lige raycasten en smule.
-            RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.down * 4f, Vector2.down, rayLength, playerLayer);
+            Vector3 offset = Vector3.right * 2f;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + offset, Vector2.down, rayLength, playerLayer);
 
             Debug.Log("Ray hit: " + hit.collider);
 
@@ -42,6 +53,8 @@ public class ObstacleFlying : MonoBehaviour
         {
             // Dykker nedad
             transform.Translate(Vector2.down * diveSpeed * Time.deltaTime);
+            //Laver animationen til dykke
+            animator.SetBool("isDiving", true);
         }
     }
 
@@ -49,7 +62,9 @@ public class ObstacleFlying : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * rayLength);
+
+        Vector3 offset = Vector3.right * 2f;
+        Gizmos.DrawLine(transform.position + offset, transform.position + offset + Vector3.down * rayLength);
     }
 }
 
