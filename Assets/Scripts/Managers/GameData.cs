@@ -49,4 +49,12 @@ public class GameData : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public bool CanAfford(int cost) {
+        return NewTotalCoins >= cost;
+    }
+
+    public void SpendCoins(int amount) {
+        NewTotalCoins -= amount;
+    }
 }
