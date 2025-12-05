@@ -5219,7 +5219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5653791dcf664df47a371ef06eb4e82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawnerScript
-  player: {fileID: 0}
+  player: {fileID: 640350423}
   Groundobstacles:
   - {fileID: 5592770724378068415, guid: 32af7e78634e7c149ac98ef563d7e8f6, type: 3}
   - {fileID: 3725518400749149289, guid: 9c28bc51cf85bdf46aa6d72c5f56a0f4, type: 3}
@@ -6001,7 +6001,7 @@ GameObject:
   - component: {fileID: 640350424}
   - component: {fileID: 640350430}
   m_Layer: 8
-  m_Name: Player1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6079,7 +6079,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &640350426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6212,7 +6212,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: df70fa95-8a34-4494-b137-73ab6b9c7d37
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &684021137
