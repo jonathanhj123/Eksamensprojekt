@@ -6110,7 +6110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   IsAlive: 1
   rb2D: {fileID: 640350425}
-  JumpForce: 11
+  JumpForce: 12
 --- !u!212 &640350428
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6178,7 +6178,7 @@ Transform:
   m_GameObject: {fileID: 640350423}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.44, y: -0.94, z: 0}
+  m_LocalPosition: {x: -4.78, y: -1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
