@@ -5227,6 +5227,7 @@ MonoBehaviour:
   - {fileID: 3867684116020433588, guid: b8c03cdb18a18e14b8341e2917225558, type: 3}
   Airobstacles:
   - {fileID: 3270261207016382736, guid: 5d00fe66ed995314591012797e649129, type: 3}
+  - {fileID: 9045197310396959533, guid: b3de3681c4dbaaa44a4cc3d5b0df34f3, type: 3}
   spawnRate: 2
 --- !u!4 &403722667
 Transform:
