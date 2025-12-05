@@ -27,7 +27,7 @@ public class BulletBehavior : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground" ||
-        collision.gameObject.tag == "Obstacle")
+        collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "AirObstacle")
         {
             Destroy(gameObject);
           // StartCoroutine(playHitAnimation());
