@@ -30,16 +30,34 @@ public class ObstacleSpawnerScript : MonoBehaviour
             {
                 if (GameData.Instance.RoundScore > 50)
                 {
+                    if(GameData.Instance.RoundScore < 250)
+                    {
+                    
+                    if (Random.Range(1,3) == 1)
+                    {
+                        spawnMeteor();
+                        timer = 0;
+                    } else
+                    {
+                            spawnGroundObstacle();
+                            timer = 0;
+                    }
+                    }
+                    else
+                    {
                     if (Random.Range(1,3) == 1)
                     {
                         spawnAirObstacle();
                         timer = 0;
                     } else
-                    {
-                        spawnGroundObstacle();
-                        timer = 0;
+                        {
+                            spawnGroundObstacle();
+                            timer = 0;
+                        }
                     }
+
                 } else
+                
                 spawnGroundObstacle();
                 timer = 0;
             }
@@ -50,6 +68,11 @@ public class ObstacleSpawnerScript : MonoBehaviour
     {
     Instantiate(Groundobstacles[Random.Range(0,4)], new Vector3(transform.position.x, -3, 0), transform.rotation);
     } 
+
+    void spawnMeteor()
+    {
+    Instantiate(Airobstacles[0], new Vector3(transform.position.x, 3, 0), transform.rotation);
+    }
 
     void spawnAirObstacle()
     {
