@@ -66,5 +66,13 @@ public class ObstacleFlying : MonoBehaviour
         Vector3 offset = Vector3.right * 2f;
         Gizmos.DrawLine(transform.position + offset, transform.position + offset + Vector3.down * rayLength);
     }
+
+     public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
 
