@@ -19,6 +19,11 @@ public class GameData : MonoBehaviour
     public bool GameRunning { get; set; } 
     public string Difficulty { get; set; }
 
+
+    //For loading highscore and coins at initial launch
+    [SerializeField] MainScreenUIToggles mainScreenUI;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -34,10 +39,22 @@ public class GameData : MonoBehaviour
             Difficulty = "Hard";
             GameRunning = false;
             NewHighscoreWasSest = false;
+
+            // Initialize TMP's on main screen at launch
+            mainScreenUI = GameObject.Find("UIToggler").GetComponent<MainScreenUIToggles>();
+            mainScreenUI.UpdateStatsPanel();
         } 
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    public bool CanAfford(int cost) {
+        return NewTotalCoins >= cost;
+    }
+
+    public void SpendCoins(int amount) {
+        NewTotalCoins -= amount;
     }
 }

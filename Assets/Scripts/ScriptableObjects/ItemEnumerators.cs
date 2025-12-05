@@ -12,7 +12,9 @@ public enum EquipSlot
 {
     Head,
     Body,
-    Hand,
-    Accessory
+    LeftHand,
+    Accessory,
+    Weapon
 }
+
 

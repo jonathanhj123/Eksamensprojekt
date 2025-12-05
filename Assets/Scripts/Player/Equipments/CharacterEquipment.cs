@@ -6,23 +6,71 @@ public class CharacterEquipment : MonoBehaviour
     [Header("Attachment points")]
     public Transform headSlot;
     public Transform bodySlot;
-    public Transform handSlot;
+    public Transform leftHandSlot;
     public Transform accessorySlot;
+    public Transform weaponSlot;
 
-    private Dictionary<EquipSlot, ItemData> equippedItems = new();
     private Dictionary<EquipSlot, GameObject> ingameVisuals = new();
 
-    public void Equip(ItemData item)
+
+    public void ApplyLoadout(PremadeLoadout loadout)
+    {
+        if (loadout == null) return;
+
+        if (loadout.head      != null) EquipItem(loadout.head);
+        if (loadout.body      != null) EquipItem(loadout.body);
+        if (loadout.lefthand  != null) EquipItem(loadout.lefthand);
+        if (loadout.accessory != null) EquipItem(loadout.accessory);
+    }
+
+    public void ApplyWeapon(ItemData weapon)
+    {
+        if (weapon == null)
+        {
+            UnEquip(EquipSlot.Weapon);
+            return;
+        }
+
+        EquipItem(weapon);
+    }
+
+
+    public void ApplyFromData(CharacterEquipmentData data)
+    {
+        if (data == null) return;
+
+        ClearAll();
+
+        if (data.currentLoadout != null)
+        {
+            ApplyLoadout(data.currentLoadout);
+        }
+
+        if (data.currentWeapon != null)
+        {
+            ApplyWeapon(data.currentWeapon);
+        }
+    }
+
+    public void ClearAll()
+    {
+        foreach (var pair in ingameVisuals)
+        {
+            if (pair.Value != null)
+                Destroy(pair.Value);
+        }
+        ingameVisuals.Clear();
+    }
+
+
+    public void EquipItem(ItemData item)
     {
         if (item == null) return;
 
         //unequips old item in slot
         UnEquip(item.equipSlot);
 
-        //save new item in equipslot
-        equippedItems[item.equipSlot] = item;
-
-        //Spawn visuals for mainscreen
+        //Spawn visuals
         Transform slotTransform = GetSlotTransform(item.equipSlot);
         if (slotTransform != null && item.prefab != null) 
         {
@@ -31,13 +79,9 @@ public class CharacterEquipment : MonoBehaviour
         instance.transform.localRotation = Quaternion.identity;
         ingameVisuals[item.equipSlot] = instance;
         }
-
-        if (CharacterEquipmentData.Instance != null)
-        {
-            CharacterEquipmentData.Instance.SetItem(item);
-        }
-
     }
+
+
 
     public void UnEquip(EquipSlot slot)
     {
@@ -46,61 +90,21 @@ public class CharacterEquipment : MonoBehaviour
             Destroy(instance);
             ingameVisuals.Remove(slot);
         }
-
-        if (equippedItems.ContainsKey(slot)) //Could be removed because by default .Remove(slot) already checks (returns true or false) if there is anything to remove, makes it easier to debug if needed
-        {
-            equippedItems.Remove(slot);
-        }
-
-        if (CharacterEquipmentData.Instance != null)
-        {
-            CharacterEquipmentData.Instance.ClearSlot(slot);
-        }
     }
 
-    public ItemData GetEquipped(EquipSlot slot)
-    {
-        equippedItems.TryGetValue(slot, out var item);
-        return item;
-    }
+
+
     private Transform GetSlotTransform(EquipSlot slot)
     {
         return slot switch
         {
-            EquipSlot.Head => headSlot,
-            EquipSlot.Body => bodySlot,
-            EquipSlot.Hand => handSlot,
+            EquipSlot.Head      => headSlot,
+            EquipSlot.Body      => bodySlot,
+            EquipSlot.LeftHand  => leftHandSlot,
             EquipSlot.Accessory => accessorySlot,
+            EquipSlot.Weapon    => weaponSlot,
             _ => null
         };
-    }
-
-    public void ApplyLoadout(PremadeSkin loadout) //For premade loadouts
-{
-    if (loadout.head)   Equip(loadout.head);
-    if (loadout.body)   Equip(loadout.body);
-    if (loadout.hand)   Equip(loadout.hand);
-    if (loadout.accessory) Equip(loadout.accessory);
-}
-
-    public void ApplyFromData(CharacterEquipmentData data)
-    {
-        if (data == null) return;
-
-        // Clear current visuals and logical state
-        foreach (var item in ingameVisuals)
-        {
-            if (item.Value != null)
-                Destroy(item.Value);
-        }
-        ingameVisuals.Clear();
-        equippedItems.Clear();
-
-        // Re-equip everything stored in persistent data
-        foreach (var item in data.GetAll())
-        {
-            Equip(item.Value);
-        }
     }
 
 }

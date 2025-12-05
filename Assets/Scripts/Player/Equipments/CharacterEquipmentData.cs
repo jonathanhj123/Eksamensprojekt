@@ -7,6 +7,13 @@ public static CharacterEquipmentData Instance { get; private set; }
 
     private Dictionary<EquipSlot, ItemData> equippedItems = new();
 
+    [Header("Seleced Loadout")]
+    public PremadeLoadout currentLoadout;
+
+    [Header("Weapon stats")]
+    public ItemData currentWeapon;
+    public int weaponTier = -1;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -19,27 +26,15 @@ public static CharacterEquipmentData Instance { get; private set; }
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SetItem(ItemData item)
+    public void SetLoadout(PremadeLoadout loadout)
     {
-        if (item == null) return;
-
-        equippedItems[item.equipSlot] = item;
+        currentLoadout = loadout;
     }
 
-    public void ClearSlot(EquipSlot slot)
+    public void SetWeapon(ItemData weapon, int tier)
     {
-        equippedItems.Remove(slot);
-    }
-
-    public ItemData GetItem(EquipSlot slot)
-    {
-        equippedItems.TryGetValue(slot, out var item);
-        return item;
-    }
-
-    public IEnumerable<KeyValuePair<EquipSlot, ItemData>> GetAll()
-    {
-        return equippedItems;
+        currentWeapon = weapon;
+        weaponTier = tier;
     }
 }
 

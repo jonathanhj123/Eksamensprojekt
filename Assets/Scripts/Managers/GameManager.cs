@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
             scoremultiplier = 1.25f;
         }
         if (GameData.Instance.Difficulty == "Hard") {
-            scoremultiplier = 2f;
+            scoremultiplier = 5f;
         }
     }
 

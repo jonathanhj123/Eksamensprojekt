@@ -21,6 +21,7 @@ public class ObstacleHoming : MonoBehaviour
     void Awake()
     {
         //Gemmer den oprindelige position af målet i fixedTargetPosition-variablen.
+        targetTransform = GameObject.FindWithTag("Player").transform;
         fixedTargetPosition = targetTransform.position;
     }
     
@@ -39,5 +40,13 @@ public class ObstacleHoming : MonoBehaviour
         //Blev brugt til at flytte meteoren mod målets live position.
         //transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, moveSpeed * Time.deltaTime);
 
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
     }
 }

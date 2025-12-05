@@ -23,18 +23,19 @@ public class MainScreenUIToggles : MonoBehaviour
     [SerializeField] private SettingsUIToggle settingsToggle;
    
    void Awake() {
-    UpdateStatsPanel();
     player = GameObject.FindWithTag("Player");
     mainDinoPosition = player.transform.position;
     shopDinoPosition = new Vector3(0.5f, 0.25f, 0f);
     settingsToggle = GetComponent<SettingsUIToggle>();
+    if (GameData.Instance != null) {
+    UpdateStatsPanel();
+    }
    }
 
    public void ShowShopUI()
     {
         mainScreenPanel.SetActive(false);
         shopPanel.SetActive(true);
-        //closeShopButton.SetActive(true);
         settingsToggle.changeSettingsButton();
 
         player.transform.position = shopDinoPosition;
@@ -63,8 +64,8 @@ public class MainScreenUIToggles : MonoBehaviour
     }
 
     public void UpdateStatsPanel() {
-    highscoreText.text = "Highscore : " + (int)GameData.Instance.Highscore; 
-    coinsText.text = "Coins : " + GameData.Instance.NewTotalCoins; 
+    highscoreText.text = "Highscore: " + (int)GameData.Instance.Highscore; 
+    coinsText.text = "Coins: " + GameData.Instance.NewTotalCoins; 
     }
 }
 
