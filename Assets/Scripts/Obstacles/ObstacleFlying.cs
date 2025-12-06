@@ -19,7 +19,8 @@ public class ObstacleFlying : MonoBehaviour
     //Variable til animator
     Animator animator;
 
-    
+    //Variabel til Partikkel effect
+    public GameObject splatterEffect;
 
 
     void Start()
@@ -73,6 +74,13 @@ public class ObstacleFlying : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
+            
+             // Spiller partikkel effekten når ptaradactle bliver ramt og inden den bliver destroyed
+            if (splatterEffect != null)
+            {
+                Instantiate(splatterEffect, transform.position, Quaternion.identity);
+            }
+            
             Destroy(gameObject);
 
         }

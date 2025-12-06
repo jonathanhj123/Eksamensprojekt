@@ -185,6 +185,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  splatterEffect: {fileID: 8991207649274841013, guid: c03008fe483e176418ed0a87e1bdcc24, type: 3}
 --- !u!95 &6443393002260919451
 Animator:
   serializedVersion: 7
