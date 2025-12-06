@@ -19,6 +19,8 @@ public class ObstacleFlying : MonoBehaviour
     //Variable til animator
     Animator animator;
 
+    
+
 
     void Start()
     {
@@ -72,6 +74,7 @@ public class ObstacleFlying : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);
+
         }
     }
 }

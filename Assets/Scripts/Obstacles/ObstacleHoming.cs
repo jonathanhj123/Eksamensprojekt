@@ -17,6 +17,9 @@ public class ObstacleHoming : MonoBehaviour
     //Snakker med objektets Rigidbody2D-komponent.
     Rigidbody2D rb;
 
+    //Variabel til Partikkel effect
+    public GameObject breakingEffect;
+
 
     void Awake()
     {
@@ -46,7 +49,15 @@ public class ObstacleHoming : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
+            
+            // Spiller partikkel effekten når meteoren bliver ramt og inden den bliver destroyed
+            if (breakingEffect != null)
+            {
+                Instantiate(breakingEffect, transform.position, Quaternion.identity);
+            }
+            
             Destroy(gameObject);
+
         }
     }
 }
