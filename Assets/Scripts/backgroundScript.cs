@@ -9,13 +9,11 @@ public class backgroundScript : MonoBehaviour
     [SerializeField]
     private Renderer bgRenderer;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Dino = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Update and implement the code below when ready

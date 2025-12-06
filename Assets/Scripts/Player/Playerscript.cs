@@ -18,6 +18,8 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, Vector2.down * 2f, Color.red);
+        Debug.DrawRay(new Vector3(transform.position.x-1,transform.position.y,transform.position.z), Vector2.down * 2f, Color.red);
+        Debug.DrawRay(new Vector3(transform.position.x+1,transform.position.y,transform.position.z), Vector2.down * 2f, Color.red);
         
 
         if(touchedObstacle())
@@ -35,12 +37,28 @@ public class PlayerScript : MonoBehaviour
 
     private bool getIsGrounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, 2.25f, LayerMask.GetMask("Ground"));
+        return Physics2D.Raycast(transform.position, Vector2.down, 2.5f, LayerMask.GetMask("Ground"));
     }
 
     private bool touchedObstacle()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, 2f, LayerMask.GetMask("Obstacle"));
+        if(
+        Physics2D.Raycast(transform.position, Vector2.down, 2.1f, LayerMask.GetMask("Obstacle")) 
+        ||
+        Physics2D.Raycast(new Vector3(transform.position.x-1,transform.position.y,transform.position.z), Vector2.down, 2.1f, LayerMask.GetMask("Obstacle"))
+        ||
+        Physics2D.Raycast(new Vector3(transform.position.x+1,transform.position.y,transform.position.z), Vector2.down, 2.1f, LayerMask.GetMask("Obstacle"))
+        )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+
+
     }
 
     public void OnJump()
@@ -50,5 +68,15 @@ public class PlayerScript : MonoBehaviour
  //           anim.Play("Jumping", 0, 0.25f);
             rb2D.linearVelocity = Vector2.up * JumpForce;
         }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "AirObstacle")
+        {
+            die();
+          // StartCoroutine(playHitAnimation());
+        }
+
     }
 }
