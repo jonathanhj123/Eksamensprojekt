@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
     public bool IsAlive = true;
     public Rigidbody2D rb2D;
     public float JumpForce = 10;
-    private Animator anim;
+   [SerializeField] private Animator anim;
 
     void Start()
     {
@@ -65,7 +65,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (IsAlive && getIsGrounded())
         {
- //           anim.Play("Jumping", 0, 0.25f);
+            anim.Play("Jumping", 0, 0.25f);
             rb2D.linearVelocity = Vector2.up * JumpForce;
         }
     }
