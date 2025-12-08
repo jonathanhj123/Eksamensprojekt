@@ -4,6 +4,7 @@ public class GunScript : MonoBehaviour
 {
 
     [SerializeField] private Animator anim;
+    [SerializeField] private int glock;
     void Start()
     {
         
@@ -18,7 +19,15 @@ public class GunScript : MonoBehaviour
     public void Shoot()
     {
      Debug.Log("GunScriptOnShoot");
-     anim.Play("gunAnim",0,0.25f);   
+
+        if (glock == 1 )
+        {
+        anim.Play("glockAnim",0,0.25f);              
+        }else
+        {
+            anim.Play("gunAnim",0,0.25f);
+        }
+
 
     }
 }

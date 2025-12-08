@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 8941983844461059482, guid: 9ee7c8df358bd0243956bb1aade306ac, type: 3}
+  m_Sprite: {fileID: 3415828706568926422, guid: 7d8cb85b9fa04c64d810dc37dc93af9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunScript
   anim: {fileID: 4116871322674341078}
+  glock: 1
 --- !u!95 &4116871322674341078
 Animator:
   serializedVersion: 7
