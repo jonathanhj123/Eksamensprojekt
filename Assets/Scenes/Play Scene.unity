@@ -5400,7 +5400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &428184927
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6697,6 +6697,22 @@ PrefabInstance:
     - target: {fileID: 125318270383314866, guid: b3de3681c4dbaaa44a4cc3d5b0df34f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506766125184119496, guid: b3de3681c4dbaaa44a4cc3d5b0df34f3, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4350014
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506766125184119496, guid: b3de3681c4dbaaa44a4cc3d5b0df34f3, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4985456
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506766125184119496, guid: b3de3681c4dbaaa44a4cc3d5b0df34f3, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.023579597
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506766125184119496, guid: b3de3681c4dbaaa44a4cc3d5b0df34f3, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03793955
       objectReference: {fileID: 0}
     - target: {fileID: 9045197310396959533, guid: b3de3681c4dbaaa44a4cc3d5b0df34f3, type: 3}
       propertyPath: m_Name
