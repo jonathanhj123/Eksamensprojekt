@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PremadeLoadout", menuName = "Scriptable Objects/PremadeLoadout")]
+[CreateAssetMenu(fileName = "PremadeLoadout", menuName = "PremadeLoadout")]
 public class PremadeLoadout : ScriptableObject
 {
     public ItemData head;

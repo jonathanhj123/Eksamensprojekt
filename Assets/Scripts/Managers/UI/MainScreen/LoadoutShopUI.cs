@@ -8,6 +8,7 @@ public class LoadoutShopUI : MonoBehaviour
     public CharacterEquipment previewCharacter;
 
     [Header("UI")]
+    public TMP_Text coinsText;
     public TMP_Text messageText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,6 +56,14 @@ public class LoadoutShopUI : MonoBehaviour
         }
 
         ShowMessage("Outfit purchased!");
+    }
+
+        private void UpdateCoinsUI()
+    {
+        if (coinsText != null && GameData.Instance != null)
+        {
+            coinsText.text = "Coins: " + GameData.Instance.NewTotalCoins;
+        }
     }
 
     

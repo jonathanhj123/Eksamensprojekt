@@ -17,9 +17,9 @@ public class CharacterEquipment : MonoBehaviour
     {
         if (loadout == null) return;
 
-        if (loadout.head      != null) EquipItem(loadout.head);
-        if (loadout.body      != null) EquipItem(loadout.body);
-        if (loadout.lefthand  != null) EquipItem(loadout.lefthand);
+        if (loadout.head != null) EquipItem(loadout.head);
+        if (loadout.body != null) EquipItem(loadout.body);
+        if (loadout.lefthand != null) EquipItem(loadout.lefthand);
         if (loadout.accessory != null) EquipItem(loadout.accessory);
     }
 

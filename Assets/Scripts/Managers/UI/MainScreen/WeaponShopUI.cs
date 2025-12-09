@@ -6,14 +6,16 @@ using UnityEngine.EventSystems;
 public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
     [Header("Preview character in menu")]
-    public CharacterEquipment previewCharacter;
+    [SerializeField] private CharacterEquipment previewCharacter;
 
-    [Header("Weapon tiers (0 = Glock, 1 = Deagle, 2 = AK, etc.)")]
-    public ItemData[] weaponTiers;
-    public int[] upgradeCosts; 
+    [Header("Weapon tiers (0 = Glock, 1 = Deagle")]
+    [SerializeField] private ItemData[] weaponTiers;
+    [SerializeField] private int[] upgradeCosts; 
 
     [Header("UI")]
-    public TMP_Text messageText;
+    [SerializeField] TMP_Text coinsText;
+    [SerializeField] private TMP_Text messageText;
+    [SerializeField] private TMP_Text upgradeInfoText;
 
 
     private void Start()
@@ -54,7 +56,7 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
         ItemData nextWeapon = weaponTiers[nextTier];
         if (previewCharacter == null || nextWeapon == null) return;
 
-        // Start from current cosmetics + current weapon from data
+        // Remove skins if you're previewing and show currently equipped loadout.
         previewCharacter.ClearAll();
         if (CharacterEquipmentData.Instance != null)
         {
@@ -62,13 +64,15 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
                 previewCharacter.ApplyLoadout(CharacterEquipmentData.Instance.currentLoadout);
         }
 
-        // Show next weapon tier
+        // Show next weapon
         previewCharacter.ApplyWeapon(nextWeapon);
     }
 
     private void TryUpgradeWeapon()
     {
         int nextTier= GetNextTier();
+        int cost = upgradeCosts[nextTier];
+
         if (nextTier == -1)
         {
             ShowMessage("Weapon is already at max level.");
@@ -81,18 +85,17 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
             return;
         }
 
-        int cost = upgradeCosts[nextTier];
-
         if (!GameData.Instance.CanAfford(cost))
         {
             ShowMessage("Not enough coins to upgrade weapon.");
             return;
         }
 
-        // Upgrade
+        // Upgrade if cleared all checks
         ItemData nextWeapon = weaponTiers[nextTier];
 
         GameData.Instance.SpendCoins(cost);
+        UpdateCoinsUI();
 
         CharacterEquipmentData.Instance.SetWeapon(nextWeapon, nextTier);
 
@@ -108,9 +111,40 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
         ShowMessage($"Weapon upgraded to {nextWeapon.displayName}!");
     }
 
+    private void RefreshUpgradeInfo()
+    {
+        if (upgradeInfoText == null)
+            return;
+
+        int nextIndex = GetNextTier();
+        if (nextIndex == -1)
+        {
+            upgradeInfoText.text = "Weapon at MAX level";
+            return;
+        }
+
+        ItemData nextWeapon = weaponTiers[nextIndex];
+        int cost = upgradeCosts[nextIndex];
+
+        upgradeInfoText.text = "Upgrade to " + nextWeapon.displayName + "  - " + cost + " coins";
+    }
+    
+     private void UpdateCoinsUI()
+    {
+        if (coinsText != null && GameData.Instance != null)
+        {
+            coinsText.text = "Coins: " + GameData.Instance.NewTotalCoins;
+        }
+    }
+
      private void ShowMessage(string msg)
     {
         if (messageText != null)
             messageText.text = msg;
+    }
+
+      private void ClearMessage()
+    {
+        ShowMessage("");
     }
 }
