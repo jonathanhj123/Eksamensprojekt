@@ -47,7 +47,7 @@ public class ObstacleHoming : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "GlockBullet")
+        if(collision.gameObject.tag == "Bullet")
         {
             
             // Spiller partikkel effekten når meteoren bliver ramt og inden den bliver destroyed
