@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour
 {
     public bool IsAlive = true;
+    public bool CanJump = true;
     public Rigidbody2D rb2D;
     public float JumpForce = 10;
    [SerializeField] private Animator anim;
@@ -63,10 +64,17 @@ public class PlayerScript : MonoBehaviour
 
     public void OnJump()
     {
-        if (IsAlive && getIsGrounded())
+        if (IsAlive && getIsGrounded() && CanJump)
         {
-            anim.Play("Jumping", 0, 0.25f);
+            //anim.Play("Jumping", 0, 0.25f);
+            anim.SetBool("Jumping", true);
+            CanJump = false;
             rb2D.linearVelocity = Vector2.up * JumpForce;
+        }
+        else
+        {
+            anim.SetBool("Jumping", false);
+            CanJump = true;
         }
     }
 
