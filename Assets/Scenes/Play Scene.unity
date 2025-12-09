@@ -6097,7 +6097,7 @@ MonoBehaviour:
   gunPos: {fileID: 1298654134}
   gun: {fileID: 1298654133}
   Shootpos: {fileID: 2004195815}
-  Bullet: {fileID: 4272878988566155731, guid: da60f857a32c3754caff22256b0e4b27, type: 3}
+  Bullet: {fileID: 4272878988566155731, guid: 1b786b66aff18e4478e4bd3fc2742520, type: 3}
 --- !u!114 &640350427
 MonoBehaviour:
   m_ObjectHideFlags: 0

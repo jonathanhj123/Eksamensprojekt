@@ -72,7 +72,7 @@ public class ObstacleFlying : MonoBehaviour
 
      public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "GlockBullet")
+        if(collision.gameObject.tag == "GlockBullet" || collision.gameObject.tag == "DeagleBulelt")
         {
             
              // Spiller partikkel effekten når ptaradactle bliver ramt og inden den bliver destroyed
