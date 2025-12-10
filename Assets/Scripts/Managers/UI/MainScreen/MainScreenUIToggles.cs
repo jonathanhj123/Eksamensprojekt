@@ -13,6 +13,7 @@ public class MainScreenUIToggles : MonoBehaviour
     [SerializeField] private GameObject playButton;
 
     [Header("Shop Screen Objects")]
+    [SerializeField] private GameObject shopButtonsPanel;
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private GameObject closeShopButton;
 
@@ -27,7 +28,7 @@ public class MainScreenUIToggles : MonoBehaviour
    void Awake() {
     player = GameObject.FindWithTag("Player");
     mainDinoPosition = player.transform.position;
-    shopDinoPosition = new Vector3(0.5f, 0.25f, 0f);
+    shopDinoPosition = new Vector3(0f, 0f, 0f);
     settingsToggle = GetComponent<SettingsUIToggle>();
     if (GameData.Instance != null) {
     UpdateStatsPanel();
@@ -38,13 +39,19 @@ public class MainScreenUIToggles : MonoBehaviour
      SceneManager.LoadScene("Play Scene");
    }
 
-   public void ShowShopUI()
+   public void ShowShopUI() {
+        mainScreenPanel.SetActive(false);
+        shopButtonsPanel.SetActive(true);
+        settingsToggle.changeSettingsButton();
+        player.transform.position = shopDinoPosition;
+   }
+
+   public void ShowLoadoutShopUI()
     {
         mainScreenPanel.SetActive(false);
+        shopButtonsPanel.SetActive(false);
         shopPanel.SetActive(true);
         settingsToggle.changeSettingsButton();
-
-        player.transform.position = shopDinoPosition;
       /*  if(buttonSettings.activeSelf) {
         settingsPanel.SetActive(true);
         changeSettingsButton();
