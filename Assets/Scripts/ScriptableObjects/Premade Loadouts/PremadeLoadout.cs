@@ -6,8 +6,7 @@ public class PremadeLoadout : ScriptableObject
     public ItemData head;
     public ItemData body;
     public ItemData lefthand;
-    public ItemData accessory;
-
+    
     [Header("Shop")]
     public int price;
 }
