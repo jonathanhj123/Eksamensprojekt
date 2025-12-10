@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MainScreenUIToggles : MonoBehaviour
@@ -9,6 +10,7 @@ public class MainScreenUIToggles : MonoBehaviour
     [SerializeField] private TextMeshProUGUI coinsText;
     [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject closeSettingsButton;
+    [SerializeField] private GameObject playButton;
 
     [Header("Shop Screen Objects")]
     [SerializeField] private GameObject shopPanel;
@@ -30,6 +32,10 @@ public class MainScreenUIToggles : MonoBehaviour
     if (GameData.Instance != null) {
     UpdateStatsPanel();
     }
+   }
+
+   public void StartGame() {
+     SceneManager.LoadScene("Play Scene");
    }
 
    public void ShowShopUI()
