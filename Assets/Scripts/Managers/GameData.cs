@@ -57,4 +57,10 @@ public class GameData : MonoBehaviour
     public void SpendCoins(int amount) {
         NewTotalCoins -= amount;
     }
+
+    public void SetRoundCoins()
+    {
+        NewTotalCoins = LastTotalCoins + ((int)RoundScore/10);   
+        Debug.Log("Roundscore coins are " + RoundCoins);
+    }
 }
