@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3b0e3c987aa464f94119fc3c839fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
-  Dino: {fileID: 0}
   backgroundSpeed: 0.1
   bgRenderer: {fileID: 1636868240792323608}
 --- !u!1 &1071117344516300096
@@ -253,7 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3b0e3c987aa464f94119fc3c839fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
-  Dino: {fileID: 0}
   backgroundSpeed: 0.075
   bgRenderer: {fileID: 133833717827882762}
 --- !u!1 &3736348673366247877
@@ -381,7 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3b0e3c987aa464f94119fc3c839fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
-  Dino: {fileID: 0}
   backgroundSpeed: 0.1
   bgRenderer: {fileID: 1334845905621986291}
 --- !u!1 &4612513356605780163
@@ -509,7 +506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3b0e3c987aa464f94119fc3c839fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
-  Dino: {fileID: 0}
   backgroundSpeed: 0.09
   bgRenderer: {fileID: 4365637777943395678}
 --- !u!1 &4915661114681494494
@@ -637,7 +633,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3b0e3c987aa464f94119fc3c839fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
-  Dino: {fileID: 0}
   backgroundSpeed: 0.01
   bgRenderer: {fileID: 8581157021302869395}
 --- !u!1 &5259696787831916483
@@ -765,7 +760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3b0e3c987aa464f94119fc3c839fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
-  Dino: {fileID: 0}
   backgroundSpeed: 0.3
   bgRenderer: {fileID: 2775606958854743777}
 --- !u!1 &5780800251286872195
@@ -893,7 +887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3b0e3c987aa464f94119fc3c839fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
-  Dino: {fileID: 0}
   backgroundSpeed: 0.05
   bgRenderer: {fileID: 6131894651730073911}
 --- !u!1 &6333665633503127344

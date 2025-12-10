@@ -11,18 +11,16 @@ public class GunController : MonoBehaviour
     public GameObject DeagleBullet;
     public GameObject GlockBullet;
     private GameObject Bullet;
+    [SerializeField] private int fireRate = 4;
+    private int timer = 0;
 
 
     // Update is called once per frame
 
     void Awake()
-    {
-
-        
+    { 
         Bullet = DeagleBullet;
         GunScript = gun.GetComponent<GunScript>();
-
-
     }
     void Update()
     {
@@ -32,10 +30,14 @@ public class GunController : MonoBehaviour
         gunPos.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
     }
 
+    void FixedUpdate()
+    {
+        timer++;
+    }
+
 
     public void OnShoot()
     {
-
         if(CharacterEquipmentData.Instance.weaponTier == 0)
         {
             Bullet = GlockBullet;
@@ -43,8 +45,11 @@ public class GunController : MonoBehaviour
         {
             Bullet = DeagleBullet;
         }
+        if (timer > fireRate) {
     Instantiate(Bullet,Shootpos.position,Shootpos.rotation);
     Debug.Log("Pew pew");
     GunScript.Shoot();
+    timer = 0;
+        }
     }
 }

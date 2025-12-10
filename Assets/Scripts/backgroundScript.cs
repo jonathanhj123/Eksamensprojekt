@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class backgroundScript : MonoBehaviour
 {
-    public GameObject Dino;
+    private PlayerScript Player;
     public float backgroundSpeed;
 
     [SerializeField]
@@ -11,15 +11,14 @@ public class backgroundScript : MonoBehaviour
 
     void Start()
     {
-        Dino = GameObject.FindGameObjectWithTag("Player");
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
     }
 
     void Update()
     {
-        // Update and implement the code below when ready
-        //player_script birdoScript = Birdo.GetComponent<player_script>();
-        //if (birdoScript != null && birdoScript.birdIsAlive)
-        
-        bgRenderer.material.mainTextureOffset += new Vector2(backgroundSpeed * Time.deltaTime, 0);
+        if (Player != null && Player.IsAlive == true)
+        {
+            bgRenderer.material.mainTextureOffset += new Vector2(backgroundSpeed * Time.deltaTime, 0);
+        }
     }
 }
