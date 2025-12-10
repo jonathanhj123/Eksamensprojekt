@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         
-  //      anim = gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -68,10 +68,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (IsAlive && getIsGrounded())
         { 
-            if(!getIsGrounded())
-            {
-            anim.Play("DinoJump", 0, 0.25f);                
-            }
+            anim.Play("DinoJump", 0, 0.25f);   
             rb2D.linearVelocity = Vector2.up * JumpForce;
         }
     }
