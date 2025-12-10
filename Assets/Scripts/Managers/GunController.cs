@@ -18,10 +18,19 @@ public class GunController : MonoBehaviour
     void Awake()
     {
 
-        
-        Bullet = DeagleBullet;
-        GunScript = gun.GetComponent<GunScript>();
-
+        foreach (Transform child in gunPos)
+        {
+        if (child.CompareTag("Gun"))
+            {
+            gun = child.gameObject;
+            GunScript = gun.GetComponent<GunScript>();
+            break;
+            }
+        if (child.CompareTag("Shootpos")) 
+            {
+            Shootpos = child.transform;
+            }
+        }
 
     }
     void Update()
