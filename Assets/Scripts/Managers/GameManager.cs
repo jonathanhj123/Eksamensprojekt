@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
             dataObj.AddComponent<GameData>();
         }
         SetScoremultiplierByDifficulty();
+        StartGame();
     }
 
     // Update is called once per frame

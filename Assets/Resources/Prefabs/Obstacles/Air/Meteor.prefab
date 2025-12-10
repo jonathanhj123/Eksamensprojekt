@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5840642448560684078}
   m_Layer: 0
   m_Name: Meteor
-  m_TagString: Untagged
+  m_TagString: AirObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

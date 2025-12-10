@@ -35,16 +35,17 @@ public class GunController : MonoBehaviour
     }
     void Update()
     {
+        if(CharacterEquipmentData.Instance.weaponTier != -1) {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePos - gunPos.position;
 
         gunPos.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
+        }
     }
 
 
     public void OnShoot()
     {
-
         if(CharacterEquipmentData.Instance.weaponTier == 0)
         {
             Bullet = GlockBullet;
