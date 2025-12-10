@@ -11,6 +11,7 @@ public class SettingsUIToggle : MonoBehaviour
 
     [Header("If in Main Screen")]
     [SerializeField] private GameObject mainScreenPanel;
+    [SerializeField] private GameObject shopButtonsPanel;
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private MainScreenUIToggles mainScreenUI;
 
@@ -35,6 +36,7 @@ public class SettingsUIToggle : MonoBehaviour
         Time.timeScale = 0f;
         if(mainScreenPanel != null && shopPanel != null) {
             mainScreenPanel.SetActive(false);
+            shopButtonsPanel.SetActive(false);
             shopPanel.SetActive(false);
         }
         }
@@ -45,6 +47,7 @@ public class SettingsUIToggle : MonoBehaviour
         Time.timeScale = 1f;
         if(mainScreenPanel != null && shopPanel != null) {
             mainScreenPanel.SetActive(true);
+            shopButtonsPanel.SetActive(false);
             shopPanel.SetActive(false);
             mainScreenUI.MoveDinosaurBack();
             mainScreenUI.UpdateStatsPanel();
