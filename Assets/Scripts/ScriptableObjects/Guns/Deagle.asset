@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 10
   displayName: Deagle
   description: 
-  category: 0
-  equipSlot: 0
+  category: 2
+  equipSlot: 3
   icon: {fileID: 8941983844461059482, guid: 9ee7c8df358bd0243956bb1aade306ac, type: 3}
   prefab: {fileID: 4851670249500138427, guid: 2b11beb2c6244f84e82b0d6bb482f434, type: 3}

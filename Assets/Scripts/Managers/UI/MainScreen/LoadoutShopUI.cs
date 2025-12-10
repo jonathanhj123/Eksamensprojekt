@@ -11,11 +11,12 @@ public class LoadoutShopUI : MonoBehaviour
     [Header("UI")]
     public TMP_Text coinsText;
     public TMP_Text messageText;
+    public LoadoutButton[] loadoutButtons;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    
+        UpdateCoinsUI();
     }
 
     public void PreviewLoadout(PremadeLoadout loadout)
@@ -31,6 +32,24 @@ public class LoadoutShopUI : MonoBehaviour
             previewCharacter.ApplyWeapon(CharacterEquipmentData.Instance.currentWeapon);
         }
     }
+
+     public void OnLoadoutClicked(PremadeLoadout loadout)
+    {
+        if (loadout == null) return;
+        ClearMessage();
+
+        bool owned = CharacterEquipmentData.Instance != null && CharacterEquipmentData.Instance.IsLoadoutOwned(loadout);
+
+        if (!owned)
+        {
+            TryToBuyLoadout(loadout);
+        }
+        else
+        {
+            EquipOwnedLoadout(loadout);
+        }
+    }
+    
 
       public void TryToBuyLoadout(PremadeLoadout loadout)
     {
@@ -49,14 +68,19 @@ public class LoadoutShopUI : MonoBehaviour
             return;
         }
 
-        GameData.Instance.SpendCoins(loadout.price);
+        
         
         if (CharacterEquipmentData.Instance != null)
         {
+            GameData.Instance.SpendCoins(loadout.price);
+            CharacterEquipmentData.Instance.AddOwnedLoadout(loadout);
             CharacterEquipmentData.Instance.SetLoadout(loadout);
+            StartCoroutine(ShowMessage("Outfit purchased!"));
+            RefreshAllLoadouts();
+            UpdateCoinsUI();
         }
 
-        StartCoroutine(ShowMessage("Outfit purchased!"));
+        
     }
 
         private void UpdateCoinsUI()
@@ -67,6 +91,17 @@ public class LoadoutShopUI : MonoBehaviour
         }
     }
 
+    private void EquipOwnedLoadout(PremadeLoadout loadout)
+    {
+        if (CharacterEquipmentData.Instance != null)
+        {
+            CharacterEquipmentData.Instance.SetLoadout(loadout);
+        }
+        PreviewLoadout(loadout);
+        StartCoroutine(ShowMessage("Outfit equipped."));
+        RefreshAllLoadouts();
+    }
+
      private void ClearMessage()
     {
         messageText.text = "";
@@ -75,7 +110,20 @@ public class LoadoutShopUI : MonoBehaviour
     private IEnumerator ShowMessage(string msg) {
         if (messageText != null)
             messageText.text = msg;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             ClearMessage();
     }
+
+    public void RefreshAllLoadouts()
+{
+    if (loadoutButtons == null) return;
+
+    foreach (var panel in loadoutButtons)
+    {
+        if (panel != null)
+        {
+            panel.RefreshPrice();   // panel updates itself
+        }
+    }
+}
 }

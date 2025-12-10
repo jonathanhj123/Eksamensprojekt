@@ -17,15 +17,6 @@ public class LoadoutButton : MonoBehaviour, IPointerEnterHandler, IPointerClickH
         RefreshPrice();
     }
 
-    private void RefreshPrice()
-    {
-        if (loadout == null) return;
-
-        if (loadoutPriceTMP != null) {
-            loadoutPriceTMP.text = loadout.price.ToString();
-        }
-    }
-
     // Hover = preview
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -40,8 +31,34 @@ public class LoadoutButton : MonoBehaviour, IPointerEnterHandler, IPointerClickH
     {
         if (loadoutShop != null && loadout != null)
         {
-            loadoutShop.TryToBuyLoadout(loadout);
+            loadoutShop.OnLoadoutClicked(loadout);
+            RefreshPrice();
         }
+    }
+
+    public void RefreshPrice()
+    {
+        if (loadout == null) return;
+
+        bool isOwned = CharacterEquipmentData.Instance != null &&
+                       CharacterEquipmentData.Instance.IsLoadoutOwned(loadout);
+
+        bool isEquipped = CharacterEquipmentData.Instance != null &&
+                          CharacterEquipmentData.Instance.currentLoadout == loadout;
+
+        if (loadoutPriceTMP != null)
+            if (isEquipped) 
+            {
+                loadoutPriceTMP.text = "Equipped";
+            }
+            if (isOwned) 
+            {
+                loadoutPriceTMP.text = "Owned";
+            }
+            else 
+            { 
+                loadoutPriceTMP.text = loadout.price.ToString();
+            }
     }
 }
 

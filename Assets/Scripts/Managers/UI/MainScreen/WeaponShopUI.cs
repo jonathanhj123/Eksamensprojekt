@@ -22,6 +22,7 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
     private void Start()
     {
         RefreshUpgradeInfo();
+        UpdateCoinsUI();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -120,14 +121,14 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
         int nextIndex = GetNextTier();
         if (nextIndex == -1)
         {
-            upgradeInfoText.text = "Weapon at MAX level";
+            upgradeInfoText.text = "MAX level";
             return;
         }
 
         ItemData nextWeapon = weaponTiers[nextIndex];
         int cost = upgradeCosts[nextIndex];
 
-        upgradeInfoText.text = "Upgrade to " + nextWeapon.displayName + "  - " + cost + " coins";
+        upgradeInfoText.text = cost + " coins";
     }
     
      private void UpdateCoinsUI()
@@ -141,7 +142,7 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
       private IEnumerator ShowMessage(string msg) {
         if (messageText != null)
             messageText.text = msg;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             ClearMessage();
     }
 

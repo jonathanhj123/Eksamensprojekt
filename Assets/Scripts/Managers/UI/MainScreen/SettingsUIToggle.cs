@@ -53,7 +53,7 @@ public class SettingsUIToggle : MonoBehaviour
             shopPanel.SetActive(false);
             mainScreenUI.MoveDinosaurBack();
             mainScreenUI.UpdateStatsPanel();
-            previewCharacter.ApplyLoadout(CharacterEquipmentData.Instance.currentLoadout);
+            previewCharacter.ApplyFromData(CharacterEquipmentData.Instance);
         }
         }
     }

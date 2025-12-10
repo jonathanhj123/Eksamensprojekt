@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 11
   displayName: Glock
   description: 
-  category: 0
-  equipSlot: 0
+  category: 2
+  equipSlot: 3
   icon: {fileID: 3415828706568926422, guid: 7d8cb85b9fa04c64d810dc37dc93af9c, type: 3}
   prefab: {fileID: 4851670249500138427, guid: a96938283e44edf49addc43c749c5a5e, type: 3}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c73250a56e8a454a8798423da293477, type: 3}
   m_Name: NoWeapon
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  id: 
-  displayName: 
+  id: no_weapon
+  displayName: Arm
   description: 
-  category: 0
-  equipSlot: 0
+  category: 2
+  equipSlot: 3
   icon: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 5030480370117605174, guid: dbbb03a642f335c49b5c94da1ceceeca, type: 3}

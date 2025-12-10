@@ -10,6 +10,9 @@ public static CharacterEquipmentData Instance { get; private set; }
     [Header("Seleced Loadout")]
     public PremadeLoadout currentLoadout;
 
+     [Header("Owned loadouts")]
+    public List<PremadeLoadout> ownedLoadouts = new();
+
     [Header("Weapon stats")]
     public ItemData currentWeapon;
     public int weaponTier = -1;
@@ -35,6 +38,19 @@ public static CharacterEquipmentData Instance { get; private set; }
     {
         currentWeapon = weapon;
         weaponTier = tier;
+    }
+
+    public bool IsLoadoutOwned(PremadeLoadout loadout)
+    {
+        return ownedLoadouts.Contains(loadout);
+    }
+
+    public void AddOwnedLoadout(PremadeLoadout loadout)
+    {
+        if (!ownedLoadouts.Contains(loadout))
+        {
+            ownedLoadouts.Add(loadout);
+        }
     }
 }
 

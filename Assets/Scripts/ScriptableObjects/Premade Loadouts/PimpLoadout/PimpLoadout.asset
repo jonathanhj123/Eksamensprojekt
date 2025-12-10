@@ -15,4 +15,4 @@ MonoBehaviour:
   head: {fileID: 11400000, guid: 3f60df7c4a3f15547be231200c4d4610, type: 2}
   body: {fileID: 11400000, guid: e65d8f4c78e70c245a8c6d3487891c3d, type: 2}
   lefthand: {fileID: 11400000, guid: 2c0ad8319cc9e7f4ca2af71deab7213c, type: 2}
-  price: 250
+  price: 100

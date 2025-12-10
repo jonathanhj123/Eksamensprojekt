@@ -32,6 +32,7 @@ public class MainScreenUIToggles : MonoBehaviour
     settingsToggle = GetComponent<SettingsUIToggle>();
     if (GameData.Instance != null) {
     UpdateStatsPanel();
+    
     }
    }
 
