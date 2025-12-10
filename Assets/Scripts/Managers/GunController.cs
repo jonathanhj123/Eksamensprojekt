@@ -8,14 +8,25 @@ public class GunController : MonoBehaviour
     [SerializeField] private GameObject gun;
     private GunScript GunScript;
     public Transform Shootpos;
-    public GameObject Bullet;
+    public GameObject DeagleBullet;
+    public GameObject GlockBullet;
+    private GameObject Bullet;
+
 
     // Update is called once per frame
 
     void Awake()
     {
+ //       if(CharacterEquipmentData.Instance.weaponTier == 0)
+ //       {
+ //           Bullet = GlockBullet;
+ //       } else if (CharacterEquipmentData.Instance.weaponTier == 1)
+//        {
+ //           GlockBullet = DeagleBullet;
+  //      }
         
         GunScript = gun.GetComponent<GunScript>();
+        Bullet = DeagleBullet;
 
     }
     void Update()

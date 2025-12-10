@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
     public float JumpForce = 10;
    [SerializeField] private Animator anim;
 
+
     void Start()
     {
         
@@ -66,8 +67,11 @@ public class PlayerScript : MonoBehaviour
     public void OnJump()
     {
         if (IsAlive && getIsGrounded())
-        {
-            anim.Play("Jumping", 0, 0.25f);
+        { 
+            if(!getIsGrounded())
+            {
+            anim.Play("Jumping", 0, 0.25f);                
+            }
             rb2D.linearVelocity = Vector2.up * JumpForce;
         }
     }
