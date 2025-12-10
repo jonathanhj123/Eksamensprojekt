@@ -17,16 +17,11 @@ public class GunController : MonoBehaviour
 
     void Awake()
     {
- //       if(CharacterEquipmentData.Instance.weaponTier == 0)
- //       {
- //           Bullet = GlockBullet;
- //       } else if (CharacterEquipmentData.Instance.weaponTier == 1)
-//        {
- //           GlockBullet = DeagleBullet;
-  //      }
+
         
-        GunScript = gun.GetComponent<GunScript>();
         Bullet = DeagleBullet;
+        GunScript = gun.GetComponent<GunScript>();
+
 
     }
     void Update()
@@ -40,6 +35,14 @@ public class GunController : MonoBehaviour
 
     public void OnShoot()
     {
+
+        if(CharacterEquipmentData.Instance.weaponTier == 0)
+        {
+            Bullet = GlockBullet;
+        } else if (CharacterEquipmentData.Instance.weaponTier == 1)
+        {
+            Bullet = DeagleBullet;
+        }
     Instantiate(Bullet,Shootpos.position,Shootpos.rotation);
     Debug.Log("Pew pew");
     GunScript.Shoot();
