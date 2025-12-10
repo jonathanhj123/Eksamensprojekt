@@ -70,7 +70,7 @@ public class PlayerScript : MonoBehaviour
         { 
             if(!getIsGrounded())
             {
-            anim.Play("Jumping", 0, 0.25f);                
+            anim.Play("DinoJump", 0, 0.25f);                
             }
             rb2D.linearVelocity = Vector2.up * JumpForce;
         }
