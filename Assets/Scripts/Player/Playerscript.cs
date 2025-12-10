@@ -38,7 +38,7 @@ public class PlayerScript : MonoBehaviour
         GameManager.Instance.EndRound();
         Destroy(gameObject);
         Debug.Log("Dino is dead");
-        sceneManager.LoadScene("MainScreen");
+        sceneManager.LoadScene(MainScreen);
     }
 
     private bool getIsGrounded()
