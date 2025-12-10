@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
     public bool IsAlive = true;
     public Rigidbody2D rb2D;
     public float JumpForce = 10;
-    [SerializeField] private Animator anim;
+   [SerializeField] private Animator anim;
 
     void Start()
     {
@@ -29,14 +29,13 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-
     public void die()
     {
         IsAlive = false;
         GameManager.Instance.EndRound();
-        Debug.Log("Dino is dead");
-        GameData.Instance.StartCoroutine("switchScene");
         Destroy(gameObject);
+        Debug.Log("Dino is dead");
+        SceneManager.LoadScene("MainScreen");
     }
 
     private bool getIsGrounded()
@@ -85,6 +84,4 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
-
-
 }

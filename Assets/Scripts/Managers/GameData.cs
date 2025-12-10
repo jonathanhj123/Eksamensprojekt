@@ -1,7 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class GameData : MonoBehaviour
 {
@@ -59,20 +56,5 @@ public class GameData : MonoBehaviour
 
     public void SpendCoins(int amount) {
         NewTotalCoins -= amount;
-    }
-
-    public void SetRoundCoins()
-    {
-        NewTotalCoins = LastTotalCoins + ((int)RoundScore/10);   
-        Debug.Log("Roundscore coins are " + RoundCoins);
-    }
-
-        IEnumerator switchScene()
-    {
-        yield return new WaitForSeconds(1);
-        GameData.Instance.SetRoundCoins();
-        SceneManager.LoadScene("MainScreen");
-
-
     }
 }
