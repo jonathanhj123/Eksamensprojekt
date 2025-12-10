@@ -29,19 +29,14 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        
-    }
 
     public void die()
     {
         IsAlive = false;
         GameManager.Instance.EndRound();
-        Destroy(gameObject);
         Debug.Log("Dino is dead");
-        GameData.Instance.SetRoundCoins();
-        SceneManager.LoadScene("MainScreen");
+        GameData.Instance.StartCoroutine("switchScene");
+        Destroy(gameObject);
     }
 
     private bool getIsGrounded()
@@ -90,4 +85,6 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
+
+
 }
