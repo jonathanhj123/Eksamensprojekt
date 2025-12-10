@@ -24,7 +24,7 @@ public class ObstacleHoming : MonoBehaviour
     void Awake()
     {
         //Gemmer den oprindelige position af målet i fixedTargetPosition-variablen.
-        targetTransform = GameObject.FindWithTag("Player").transform;
+        targetTransform = GameObject.FindWithTag("MeteorTarget").transform;
         fixedTargetPosition = targetTransform.position;
     }
     

@@ -13,6 +13,7 @@ TagManager:
   - AirObstacle
   - GlockBullet
   - Shootpos
+  - MeteorTarget
   layers:
   - Default
   - TransparentFX

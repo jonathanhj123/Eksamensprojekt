@@ -12,27 +12,31 @@ public class GunController : MonoBehaviour
     public GameObject GlockBullet;
     private GameObject Bullet;
 
-
-    // Update is called once per frame
-
     void Awake()
     {
+    }
 
-        foreach (Transform child in gunPos)
-        {
+    void Start() {
+        FindGun();
+    }
+
+
+void FindGun()
+{
+     foreach (Transform child in gunPos.GetComponentsInChildren<Transform>())
+    {
         if (child.CompareTag("Gun"))
-            {
+        {
             gun = child.gameObject;
             GunScript = gun.GetComponent<GunScript>();
-            break;
-            }
-        if (child.CompareTag("Shootpos")) 
-            {
-            Shootpos = child.transform;
-            }
         }
-
+        else if (child.CompareTag("Shootpos")) 
+        {
+            Shootpos = child;
+        }
     }
+}
+
     void Update()
     {
         if(CharacterEquipmentData.Instance.weaponTier != -1) {
