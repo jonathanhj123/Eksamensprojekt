@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class LoadoutShopUI : MonoBehaviour
 {
@@ -38,13 +39,13 @@ public class LoadoutShopUI : MonoBehaviour
 
         if (GameData.Instance == null)
         {
-            ShowMessage("ERROR: Your coins have vanished into the abyss for now.");
+            StartCoroutine(ShowMessage("ERROR: Your coins have vanished into the abyss for now."));
             return;
         }
 
         if (!GameData.Instance.CanAfford(loadout.price))
         {
-            ShowMessage("You're too broke for this.");
+            StartCoroutine(ShowMessage("You're too broke for this."));
             return;
         }
 
@@ -55,7 +56,7 @@ public class LoadoutShopUI : MonoBehaviour
             CharacterEquipmentData.Instance.SetLoadout(loadout);
         }
 
-        ShowMessage("Outfit purchased!");
+        StartCoroutine(ShowMessage("Outfit purchased!"));
     }
 
         private void UpdateCoinsUI()
@@ -66,15 +67,15 @@ public class LoadoutShopUI : MonoBehaviour
         }
     }
 
-    
-    private void ShowMessage(string msg)
-    {
-        if (messageText != null)
-            messageText.text = msg;
-    }
-
      private void ClearMessage()
     {
-        ShowMessage("");
+        messageText.text = "";
+    }
+
+    private IEnumerator ShowMessage(string msg) {
+        if (messageText != null)
+            messageText.text = msg;
+            yield return new WaitForSeconds(3f);
+            ClearMessage();
     }
 }

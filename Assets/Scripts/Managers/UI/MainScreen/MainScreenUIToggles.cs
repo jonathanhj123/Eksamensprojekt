@@ -51,18 +51,7 @@ public class MainScreenUIToggles : MonoBehaviour
         mainScreenPanel.SetActive(false);
         shopButtonsPanel.SetActive(false);
         shopPanel.SetActive(true);
-        settingsToggle.changeSettingsButton();
-      /*  if(buttonSettings.activeSelf) {
-        settingsPanel.SetActive(true);
-        changeSettingsButton();
-        Time.timeScale = 0f;
-        }
-        else if(closeSettingsButton.activeSelf)
-        {
-        settingsPanel.SetActive(false);
-        changeSettingsButton();
-        Time.timeScale = 1f;
-        }*/
+        //settingsToggle.changeSettingsButton();
     }
 
     /*public void GoToMainScreen() {

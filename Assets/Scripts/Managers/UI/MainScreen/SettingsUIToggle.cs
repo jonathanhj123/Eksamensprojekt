@@ -15,6 +15,8 @@ public class SettingsUIToggle : MonoBehaviour
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private MainScreenUIToggles mainScreenUI;
 
+    public CharacterEquipment previewCharacter;
+
   void Awake()
     {
         escapeAction = InputSystem.actions.FindAction("Escape");
@@ -51,6 +53,7 @@ public class SettingsUIToggle : MonoBehaviour
             shopPanel.SetActive(false);
             mainScreenUI.MoveDinosaurBack();
             mainScreenUI.UpdateStatsPanel();
+            previewCharacter.ApplyLoadout(CharacterEquipmentData.Instance.currentLoadout);
         }
         }
     }

@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
@@ -20,7 +21,7 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
 
     private void Start()
     {
-
+        RefreshUpgradeInfo();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -75,19 +76,19 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
 
         if (nextTier == -1)
         {
-            ShowMessage("Weapon is already at max level.");
+            StartCoroutine(ShowMessage("Weapon is already at max level."));
             return;
         }
 
         if (GameData.Instance == null || CharacterEquipmentData.Instance == null)
         {
-            ShowMessage("Missing GameData or CharacterEquipmentData.");
+            StartCoroutine(ShowMessage("Missing GameData or CharacterEquipmentData."));
             return;
         }
 
         if (!GameData.Instance.CanAfford(cost))
         {
-            ShowMessage("Not enough coins to upgrade weapon.");
+            StartCoroutine(ShowMessage("Not enough coins to upgrade weapon."));
             return;
         }
 
@@ -108,7 +109,7 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
 
             previewCharacter.ApplyWeapon(nextWeapon);
         }
-        ShowMessage($"Weapon upgraded to {nextWeapon.displayName}!");
+        StartCoroutine(ShowMessage("Weapon upgraded to " + nextWeapon.displayName + "!"));
     }
 
     private void RefreshUpgradeInfo()
@@ -137,14 +138,15 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
         }
     }
 
-     private void ShowMessage(string msg)
-    {
+      private IEnumerator ShowMessage(string msg) {
         if (messageText != null)
             messageText.text = msg;
+            yield return new WaitForSeconds(3f);
+            ClearMessage();
     }
 
       private void ClearMessage()
     {
-        ShowMessage("");
+        messageText.text = "";
     }
 }
