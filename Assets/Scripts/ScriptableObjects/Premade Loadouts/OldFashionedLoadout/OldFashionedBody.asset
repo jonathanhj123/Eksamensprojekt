@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c73250a56e8a454a8798423da293477, type: 3}
-  m_Name: PimpHat
+  m_Name: OldFashionedBody
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  id: pimp_hat
-  displayName: Pimp Hat
-  description: a dope hat for a dope pimp
-  category: 0
-  equipSlot: 0
-  icon: {fileID: 21300000, guid: 776aa9d68ed03b34882e54a189b24642, type: 3}
-  prefab: {fileID: 5532642660789928443, guid: b92b6a2407414434fb7e37cdd5d29b93, type: 3}
+  id: oldfashioned_body
+  displayName: Old Fashioned Vest
+  description: An old school vest
+  category: 1
+  equipSlot: 1
+  icon: {fileID: 21300000, guid: b84d9224ed4244247a0d718ea09730a6, type: 3}
+  prefab: {fileID: 5515603977110895320, guid: 10e542ebbf6ae224da7f74b3c54c0c76, type: 3}

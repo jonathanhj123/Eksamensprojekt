@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c73250a56e8a454a8798423da293477, type: 3}
-  m_Name: PimpHat
+  m_Name: PimpLeftHand
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  id: pimp_hat
-  displayName: Pimp Hat
-  description: a dope hat for a dope pimp
-  category: 0
-  equipSlot: 0
-  icon: {fileID: 21300000, guid: 776aa9d68ed03b34882e54a189b24642, type: 3}
-  prefab: {fileID: 5532642660789928443, guid: b92b6a2407414434fb7e37cdd5d29b93, type: 3}
+  id: pimp_accessory
+  displayName: 
+  description: a dope cane for a dope pimp
+  category: 3
+  equipSlot: 2
+  icon: {fileID: 21300000, guid: 198723b023626de4ab62318eeec9a623, type: 3}
+  prefab: {fileID: 1967581183101905148, guid: d0e0ef22c0f1b5c40ac2d67e9bc750ae, type: 3}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db51828d68ce9b841a5bd314de7d9551, type: 3}
+  m_Name: PimpLoadout
+  m_EditorClassIdentifier: Assembly-CSharp::PremadeLoadout
+  head: {fileID: 11400000, guid: 3f60df7c4a3f15547be231200c4d4610, type: 2}
+  body: {fileID: 11400000, guid: e65d8f4c78e70c245a8c6d3487891c3d, type: 2}
+  lefthand: {fileID: 11400000, guid: 2c0ad8319cc9e7f4ca2af71deab7213c, type: 2}
+  price: 250
