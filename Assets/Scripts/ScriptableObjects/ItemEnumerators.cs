@@ -13,7 +13,6 @@ public enum EquipSlot
     Head,
     Body,
     LeftHand,
-    Accessory,
     Weapon
 }
 

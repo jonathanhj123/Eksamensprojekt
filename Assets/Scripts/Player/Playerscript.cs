@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
     public bool IsAlive = true;
@@ -8,11 +9,13 @@ public class PlayerScript : MonoBehaviour
     public float JumpForce = 10;
    [SerializeField] private Animator anim;
 
+    private SceneManager sceneManager;
+
 
     void Start()
     {
         
-  //      anim = gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,8 +35,10 @@ public class PlayerScript : MonoBehaviour
     public void die()
     {
         IsAlive = false;
+        GameManager.Instance.EndRound();
         Destroy(gameObject);
         Debug.Log("Dino is dead");
+        sceneManager.LoadScene(MainScreen);
     }
 
     private bool getIsGrounded()
@@ -68,10 +73,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (IsAlive && getIsGrounded())
         { 
-            if(!getIsGrounded())
-            {
-            anim.Play("DinoJump", 0, 0.25f);                
-            }
+            anim.Play("DinoJump", 0, 0.25f);   
             rb2D.linearVelocity = Vector2.up * JumpForce;
         }
     }

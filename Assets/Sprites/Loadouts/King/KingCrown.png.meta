@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 063a040fc907273459e7f00fe7391557
+guid: 42031bfe34ab9d8449cab0e3c284fb7c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2091929546744797159
-    second: SantaHat_0
+      213: -4538394993174803930
+    second: KingCrown_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,6 +110,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,7 +136,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SantaHat_0
+      name: KingCrown_0
       rect:
         serializedVersion: 2
-        x: 152
-        y: 110
-        width: 313
-        height: 349
+        x: 202
+        y: 341
+        width: 111
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e71ed8d6d6080d10800000000000000
-      internalID: 2091929546744797159
+      spriteID: 62a87659cc16401c0800000000000000
+      internalID: -4538394993174803930
       vertices: []
       indices: 
       edges: []
@@ -174,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SantaHat_0: 2091929546744797159
+      KingCrown_0: -4538394993174803930
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

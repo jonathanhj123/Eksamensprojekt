@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db51828d68ce9b841a5bd314de7d9551, type: 3}
-  m_Name: PremadeLoadout
+  m_Name: KingLoadout
   m_EditorClassIdentifier: Assembly-CSharp::PremadeLoadout
-  head: {fileID: 0}
-  body: {fileID: 0}
+  head: {fileID: 11400000, guid: 60abe0d70f1207144a0bc528260b6217, type: 2}
+  body: {fileID: 11400000, guid: a131dfacdc816e548aa1c35e63cf7ef3, type: 2}
   lefthand: {fileID: 0}
-  accessory: {fileID: 0}
-  price: 0
+  price: 300

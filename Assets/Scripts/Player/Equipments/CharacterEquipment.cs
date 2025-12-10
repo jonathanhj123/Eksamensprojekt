@@ -7,7 +7,6 @@ public class CharacterEquipment : MonoBehaviour
     public Transform headSlot;
     public Transform bodySlot;
     public Transform leftHandSlot;
-    public Transform accessorySlot;
     public Transform weaponSlot;
 
     private Dictionary<EquipSlot, GameObject> ingameVisuals = new();
@@ -20,7 +19,6 @@ public class CharacterEquipment : MonoBehaviour
         if (loadout.head != null) EquipItem(loadout.head);
         if (loadout.body != null) EquipItem(loadout.body);
         if (loadout.lefthand != null) EquipItem(loadout.lefthand);
-        if (loadout.accessory != null) EquipItem(loadout.accessory);
     }
 
     public void ApplyWeapon(ItemData weapon)
@@ -101,7 +99,6 @@ public class CharacterEquipment : MonoBehaviour
             EquipSlot.Head      => headSlot,
             EquipSlot.Body      => bodySlot,
             EquipSlot.LeftHand  => leftHandSlot,
-            EquipSlot.Accessory => accessorySlot,
             EquipSlot.Weapon    => weaponSlot,
             _ => null
         };
