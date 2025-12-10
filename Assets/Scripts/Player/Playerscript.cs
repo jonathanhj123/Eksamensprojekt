@@ -1,12 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
     public bool IsAlive = true;
     public Rigidbody2D rb2D;
     public float JumpForce = 10;
    [SerializeField] private Animator anim;
+
+    private SceneManager sceneManager;
 
 
     void Start()
@@ -32,8 +35,10 @@ public class PlayerScript : MonoBehaviour
     public void die()
     {
         IsAlive = false;
+        GameManager.Instance.EndRound();
         Destroy(gameObject);
         Debug.Log("Dino is dead");
+        sceneManager.LoadScene(MainScreen);
     }
 
     private bool getIsGrounded()

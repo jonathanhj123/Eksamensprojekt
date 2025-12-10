@@ -12,6 +12,7 @@ TagManager:
   - Gun
   - AirObstacle
   - GlockBullet
+  - Shootpos
   layers:
   - Default
   - TransparentFX
