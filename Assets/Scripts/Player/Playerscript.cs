@@ -9,6 +9,8 @@ public class PlayerScript : MonoBehaviour
     public float JumpForce = 10;
    [SerializeField] private Animator anim;
 
+    private SceneManager sceneManager;
+
 
     void Start()
     {
@@ -36,6 +38,7 @@ public class PlayerScript : MonoBehaviour
         GameManager.Instance.EndRound();
         Destroy(gameObject);
         Debug.Log("Dino is dead");
+        sceneManager.LoadScene("MainScreen");
     }
 
     private bool getIsGrounded()
