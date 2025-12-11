@@ -78,6 +78,7 @@ public class ObstacleFlying : MonoBehaviour
              // Spiller partikkel effekten når ptaradactle bliver ramt og inden den bliver destroyed
             if (splatterEffect != null)
             {
+                SoundFXManager.Instance.PlayBloodSFX();
                 Instantiate(splatterEffect, transform.position, Quaternion.identity);
             }
             

@@ -21,7 +21,6 @@ public class PlayerScript : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.down * 2f, Color.red);
         Debug.DrawRay(new Vector3(transform.position.x-1,transform.position.y,transform.position.z), Vector2.down * 2f, Color.red);
         Debug.DrawRay(new Vector3(transform.position.x+1,transform.position.y,transform.position.z), Vector2.down * 2f, Color.red);
-        
 
         if(touchedObstacle())
         {
@@ -32,6 +31,7 @@ public class PlayerScript : MonoBehaviour
     public void die()
     {
         IsAlive = false;
+        SoundFXManager.Instance.PlayBloodSFX();
         GameManager.Instance.EndRound();
         Destroy(gameObject);
         Debug.Log("Dino is dead");

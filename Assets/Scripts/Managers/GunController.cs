@@ -63,6 +63,7 @@ IEnumerator FindGun()
                 Debug.Log("Shot glock");
                 Instantiate(Bullet,Shootpos.position,Shootpos.rotation);
                 GunScript.Shoot();
+                SoundFXManager.Instance.PlayShootSFX();
                 glockNextFireTime = Time.time + glockFireRate;
             }
         } 
@@ -73,6 +74,7 @@ IEnumerator FindGun()
                 Debug.Log("Shot deagle");
                 Instantiate(Bullet,Shootpos.position,Shootpos.rotation);
                 GunScript.Shoot();
+                SoundFXManager.Instance.PlayShootSFX();
                 deagleNextFireTime = Time.time + deagleFireRate;
             }
         }

@@ -72,10 +72,26 @@ public class ObstacleSpawnerScript : MonoBehaviour
     void spawnMeteor()
     {
     Instantiate(Airobstacles[0], new Vector3(transform.position.x, 3, 0), transform.rotation);
+    SoundFXManager.Instance.PlayMeteorSFX();
+    }
+
+    void spawnBird()
+    {
+    Instantiate(Airobstacles[1], new Vector3(transform.position.x, 3, 0), transform.rotation);
+    SoundFXManager.Instance.PlayBirdSFX();
     }
 
     void spawnAirObstacle()
     {
-    Instantiate(Airobstacles[Random.Range(0,2)], new Vector3(transform.position.x, 3, 0), transform.rotation);
+    int SpawnID = Random.Range(0,2);
+    switch (SpawnID) 
+        {
+        case 0: 
+            spawnMeteor();
+            break;
+        case 1:
+            spawnBird();
+            break;
+        }
     }
 }

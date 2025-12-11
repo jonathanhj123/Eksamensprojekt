@@ -109,7 +109,7 @@ public class SoundFXManager : MonoBehaviour
         PlaySoundFX(coinClip, transform);
     }
 
-    public void FlyingSFX() {
+    public void PlayBirdSFX() {
         PlaySoundFX(flyingClip, transform);
     }
 
