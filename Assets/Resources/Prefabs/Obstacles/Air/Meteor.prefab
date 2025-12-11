@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6430900289086972011}
   - component: {fileID: 4861314467381440539}
   - component: {fileID: 5840642448560684078}
+  - component: {fileID: 6603775329753369723}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: AirObstacle
@@ -257,6 +258,59 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.056052208}
   m_Radius: 0.5560522
+--- !u!114 &6603775329753369723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3270261207016382736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.ShadowCaster2D
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 0000000015b2fcb3a7900f51d3109924e347c019d70ef921
+  m_ShapePath:
+  - {x: -1.25, y: -1.25, z: 0}
+  - {x: -1.25, y: 1.25, z: 0}
+  - {x: 1.25, y: 1.25, z: 0}
+  - {x: 1.25, y: -1.25, z: 0}
+  m_ShapePathHash: 0
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 3206409280347945982}
+  m_ShadowShape2DProvider:
+    rid: 826717553135976536
+  m_ShadowCastingSource: 2
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.019996643, y: 0.07249451, z: 0}
+      m_Extent: {x: 0.55498505, y: 0.54748535, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.1
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0.1
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0.1
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 2
+  m_PreviousShadowShape2DSource: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 826717553135976536
+      type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 
 --- !u!1 &6006565937051964861
 GameObject:
   m_ObjectHideFlags: 0
