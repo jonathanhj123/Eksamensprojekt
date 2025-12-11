@@ -13,14 +13,19 @@ public class SoundFXManager : MonoBehaviour
     [SerializeField] private AudioClip mainMusicClip;
     
     [Header("Player SFX")]
-    [SerializeField] private AudioClip playerWalkClip;
     [SerializeField] private AudioClip playerJumpClip;
-    [SerializeField] private AudioClip playerDeathClip;
+    [SerializeField] private AudioClip shootClip;
+
+    [Header("World SFX")]
+    [SerializeField] private AudioClip bloodClip;
+    [SerializeField] private AudioClip meteorClip;
+    [SerializeField] private AudioClip coinClip;
+    [SerializeField] private AudioClip flyingClip;
     
     
     [Header("Volume Settings")]
-    [Range(0f, 1f)] public float masterVolume = 0.25f;
-    [Range(0f, 1f)] public float musicVolume = 0.25f;
+    [Range(0f, 1f)] public float masterVolume = 0.5f;
+    [Range(0f, 1f)] public float musicVolume = 0.5f;
     [Range(0f, 1f)] public float sfxVolume = 0.5f;
 
     [Header("Internal")]
@@ -83,14 +88,29 @@ public class SoundFXManager : MonoBehaviour
         src.PlayOneShot(audioClip);
     }
 
-    public void PlayPlayerWalkSFX()
-    {
-       PlaySoundFX(playerWalkClip, transform);
-    }
-
     public void PlayPlayerJumpSFX()
     {
        PlaySoundFX(playerJumpClip, transform);
+    }
+
+    public void PlayShootSFX() {
+        PlaySoundFX(shootClip, transform);
+    }
+
+    public void PlayBloodSFX() {
+        PlaySoundFX(bloodClip, transform);
+    }
+
+    public void PlayMeteorSFX() {
+        PlaySoundFX(meteorClip, transform);
+    }
+
+    public void PlayCoinSFX() {
+        PlaySoundFX(coinClip, transform);
+    }
+
+    public void FlyingSFX() {
+        PlaySoundFX(flyingClip, transform);
     }
 
     public void PreloadMusic(AudioClip audioClip)
@@ -178,11 +198,15 @@ public class SoundFXManager : MonoBehaviour
         mainMusicSource = transform.Find("MainMusicSource").GetComponent<AudioSource>();
      
         //Music
-        //NÅR TILFØJEt mainMusicClip = Resources.Load<AudioClip>("SoundFX/MainMusic");
-       
+        mainMusicClip = Resources.Load<AudioClip>("SoundFX/MainMusic");
+
         //Player
-       //NÅR TILFØJET playerJumpClip = Resources.Load<AudioClip>("SoundFX/PlayerJumpSFX");
-       // playerDamageClip = Resources.Load<AudioClip>("SoundFX/PlayerDamageSFX");
-        //NÅR TILFØJET playerDeathClip = Resources.Load<AudioClip>("SoundFX/PlayerDeathSFX");
+        playerJumpClip = Resources.Load<AudioClip>("SoundFX/PlayerJumpSFX");
+       
+        //World
+        bloodClip = Resources.Load<AudioClip>("SoundFX/BloodSFX");
+        meteorClip = Resources.Load<AudioClip>("SoundFX/MeteorSFX");
+        coinClip = Resources.Load<AudioClip>("SoundFX/CoinSFX");
+        flyingClip = Resources.Load<AudioClip>("SoundFX/FlyingSFX");
     }
 }
