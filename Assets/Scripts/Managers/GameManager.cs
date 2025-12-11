@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameOverUIUpdater gameOverUI;
+
     [SerializeField] private float scoremultiplier;
    // [SerializeField] private AudioClip backgroundMusic;
     public static GameManager Instance;
@@ -60,10 +62,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void EndRound() {
-        StartCoroutine(SwitchScene());
         SaveCoins();
         CheckIfHighscore();
         GameData.Instance.GameRunning = false;
+        gameOverUI.UpdateUI();
     }
 
     public void CheckIfHighscore() {
@@ -80,10 +82,5 @@ public class GameManager : MonoBehaviour
     {
         GameData.Instance.LastTotalCoins = GameData.Instance.NewTotalCoins;
         GameData.Instance.NewTotalCoins += GameData.Instance.RoundCoins; //+ (int)GameData.Instance.RoundScore/10;
-    }
-    IEnumerator SwitchScene()
-    {
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("MainScreen");
     }
 }
