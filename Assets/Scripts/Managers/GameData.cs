@@ -67,6 +67,11 @@ public class GameData : MonoBehaviour
         NewTotalCoins = LastTotalCoins +(int)(RoundScore/10);
     }
 
+    public void EndRound()
+    {
+        StartCoroutine("switchScene");
+    }
+
 
     IEnumerator swithcScene()
     {
