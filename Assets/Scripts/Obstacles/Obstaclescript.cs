@@ -3,7 +3,7 @@ using UnityEngine;
 public class Obstaclescript : MonoBehaviour
 {
     public GameObject player;
-    public float movementspeed = 6;
+    public float movementspeed = 0;
     public float deadZone = -12;
     private PlayerScript playerscript;
 

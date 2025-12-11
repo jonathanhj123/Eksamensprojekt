@@ -4,7 +4,7 @@ public class PlayerSkinChanger : MonoBehaviour
 {
     public CharacterEquipment characterEquipment;
 
-    private void Awake()
+    private void Start()
     {
         if (CharacterEquipmentData.Instance != null)
         {

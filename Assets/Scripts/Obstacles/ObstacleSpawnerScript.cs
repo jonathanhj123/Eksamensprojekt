@@ -28,9 +28,9 @@ public class ObstacleSpawnerScript : MonoBehaviour
             }
             else
             {
-                if (GameData.Instance.RoundScore > 10)
+                if (GameData.Instance.RoundScore > 250)
                 {
-                    if(GameData.Instance.RoundScore < 20)
+                    if(GameData.Instance.RoundScore < 500)
                     {
                     
                     if (Random.Range(1,3) == 1)
