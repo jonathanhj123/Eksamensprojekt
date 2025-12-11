@@ -13,7 +13,7 @@ public class SoundFXManager : MonoBehaviour
     [SerializeField] private AudioClip mainMusicClip;
     
     [Header("Player SFX")]
-    [SerializeField] private AudioClip playerJumpClip;
+    [SerializeField] private AudioClip jumpClip;
     [SerializeField] private AudioClip shootClip;
 
     [Header("World SFX")]
@@ -62,6 +62,10 @@ public class SoundFXManager : MonoBehaviour
             mainMusicSource.playOnAwake = false;
         }
     }
+    
+    void Start() {
+        PlayMainMusic();
+    }
 
     public void PlaySoundFX(AudioClip audioClip, Transform spawnTransform)
     {
@@ -88,29 +92,29 @@ public class SoundFXManager : MonoBehaviour
         src.PlayOneShot(audioClip);
     }
 
-    public void PlayPlayerJumpSFX()
+    public void PlayJumpSFX()
     {
-       PlaySoundFX(playerJumpClip, transform);
+       PlaySoundFX(jumpClip, transform, 2);
     }
 
     public void PlayShootSFX() {
-        PlaySoundFX(shootClip, transform);
+        PlaySoundFX(shootClip, transform, 3);
     }
 
     public void PlayBloodSFX() {
-        PlaySoundFX(bloodClip, transform);
+        PlaySoundFX(bloodClip, transform, 2);
     }
 
     public void PlayMeteorSFX() {
-        PlaySoundFX(meteorClip, transform);
+        PlaySoundFX(meteorClip, transform, 2);
     }
 
     public void PlayCoinSFX() {
-        PlaySoundFX(coinClip, transform);
+        PlaySoundFX(coinClip, transform, 4);
     }
 
     public void PlayBirdSFX() {
-        PlaySoundFX(flyingClip, transform);
+        PlaySoundFX(flyingClip, transform, 4);
     }
 
     public void PreloadMusic(AudioClip audioClip)
@@ -201,8 +205,8 @@ public class SoundFXManager : MonoBehaviour
         mainMusicClip = Resources.Load<AudioClip>("SoundFX/MainMusic");
 
         //Player
-        playerJumpClip = Resources.Load<AudioClip>("SoundFX/PlayerJumpSFX");
-       
+        jumpClip = Resources.Load<AudioClip>("SoundFX/JumpSFX");
+        shootClip = Resources.Load<AudioClip>("SoundFX/ShootSFX");
         //World
         bloodClip = Resources.Load<AudioClip>("SoundFX/BloodSFX");
         meteorClip = Resources.Load<AudioClip>("SoundFX/MeteorSFX");

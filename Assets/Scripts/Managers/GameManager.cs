@@ -33,10 +33,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- //       if(GameData.Instance.GameRunning) {
+        if(GameData.Instance.GameRunning) {
             GameData.Instance.RoundScore += Time.deltaTime * scoremultiplier; 
             scoreText.text = (int)GameData.Instance.RoundScore + " Meters";    
-//        }
+        }
     }
     
     public void StartGame() {
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void EndRound() {
-        StartCoroutine(swithcScene());
+        StartCoroutine(SwitchScene());
         SaveCoins();
         CheckIfHighscore();
         GameData.Instance.GameRunning = false;
@@ -79,16 +79,11 @@ public class GameManager : MonoBehaviour
     public void SaveCoins()
     {
         GameData.Instance.LastTotalCoins = GameData.Instance.NewTotalCoins;
-        GameData.Instance.NewTotalCoins += GameData.Instance.RoundCoins + (int)GameData.Instance.RoundScore/10;
+        GameData.Instance.NewTotalCoins += GameData.Instance.RoundCoins; //+ (int)GameData.Instance.RoundScore/10;
     }
-    IEnumerator swithcScene()
+    IEnumerator SwitchScene()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("MainScreen");
-    }
-
-    public void SetNewCoins()
-    {
-        GameData.Instance.NewTotalCoins = GameData.Instance.LastTotalCoins +(int)(GameData.Instance.RoundScore/10);
     }
 }

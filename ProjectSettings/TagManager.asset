@@ -14,6 +14,7 @@ TagManager:
   - GlockBullet
   - Shootpos
   - MeteorTarget
+  - Coin
   layers:
   - Default
   - TransparentFX

@@ -155,10 +155,10 @@ TextureImporter:
       name: bullet_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 9
-        width: 110
-        height: 329
+        x: 9
+        y: 31
+        width: 329
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

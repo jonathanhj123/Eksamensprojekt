@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb2D;
     public float JumpForce = 10;
    [SerializeField] private Animator anim;
+   public GameObject splatterEffect;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerScript : MonoBehaviour
     public void die()
     {
         IsAlive = false;
+        Instantiate(splatterEffect, transform.position, Quaternion.identity);
         SoundFXManager.Instance.PlayBloodSFX();
         GameManager.Instance.EndRound();
         Destroy(gameObject);
@@ -69,6 +71,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (IsAlive && getIsGrounded())
         { 
+            SoundFXManager.Instance.PlayJumpSFX();
             anim.Play("DinoJump", 0, 0.25f);   
             rb2D.linearVelocity = Vector2.up * JumpForce;
         }
@@ -82,5 +85,15 @@ public class PlayerScript : MonoBehaviour
           // StartCoroutine(playHitAnimation());
         }
 
+    }
+
+     void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Coin")
+        {
+            GameData.Instance.RoundCoins++;
+            SoundFXManager.Instance.PlayCoinSFX();
+            Destroy(collider.gameObject);
+        }
     }
 }

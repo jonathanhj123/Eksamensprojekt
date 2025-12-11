@@ -23,7 +23,9 @@ public class Obstaclescript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerscript = player.GetComponent<PlayerScript>();
+    if(!GameData.Instance.GameRunning) return;
+    
+    playerscript = player.GetComponent<PlayerScript>();
        if (playerscript.IsAlive)
         {
             transform.position = transform.position + (Vector3.left * movementspeed) * Time.deltaTime;

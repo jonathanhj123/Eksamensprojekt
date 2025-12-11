@@ -25,7 +25,7 @@ public class SettingsUIToggle : MonoBehaviour
         escapeAction.Enable();
         escapeAction.performed += ctx => ShowAndHideSettings();
     }
-    if (escapeAction != null) {
+    if (escapeAction != null && mainScreenPanel != null) {
        mainScreenUI = GetComponent<MainScreenUIToggles>();
     }
     }
