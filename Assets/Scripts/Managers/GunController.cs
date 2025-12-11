@@ -12,18 +12,25 @@ public class GunController : MonoBehaviour
     public GameObject GlockBullet;
     private GameObject Bullet;
 
+    [Header("FireRate")]
+    [SerializeField] private float glockFireRate = 0.5f;
+    [SerializeField] private float glockNextFireTime = 0f;
+    [SerializeField] private float deagleFireRate = 0.5f;
+    [SerializeField] private float deagleNextFireTime = 0f;
+
     void Awake()
     {
+
     }
 
     void Start() {
-        FindGun();
+        StartCoroutine(FindGun());
     }
 
-
-void FindGun()
+IEnumerator FindGun()
 {
-     foreach (Transform child in gunPos.GetComponentsInChildren<Transform>())
+    yield return new WaitForSeconds(0.2f);
+    foreach (Transform child in gunPos.GetComponentsInChildren<Transform>())
     {
         if (child.CompareTag("Gun"))
         {
@@ -47,18 +54,27 @@ void FindGun()
         }
     }
 
-
     public void OnShoot()
     {
         if(CharacterEquipmentData.Instance.weaponTier == 0)
         {
             Bullet = GlockBullet;
-        } else if (CharacterEquipmentData.Instance.weaponTier == 1)
+            if(Time.time >= glockNextFireTime) {
+                Debug.Log("Shot glock");
+                Instantiate(Bullet,Shootpos.position,Shootpos.rotation);
+                GunScript.Shoot();
+                glockNextFireTime = Time.time + glockFireRate;
+            }
+        } 
+        else if (CharacterEquipmentData.Instance.weaponTier == 1)
         {
             Bullet = DeagleBullet;
+             if(Time.time >= deagleNextFireTime) {
+                Debug.Log("Shot deagle");
+                Instantiate(Bullet,Shootpos.position,Shootpos.rotation);
+                GunScript.Shoot();
+                deagleNextFireTime = Time.time + deagleFireRate;
+            }
         }
-    Instantiate(Bullet,Shootpos.position,Shootpos.rotation);
-    Debug.Log("Pew pew");
-    GunScript.Shoot();
     }
 }
