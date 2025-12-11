@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
   Dino: {fileID: 0}
-  backgroundSpeed: 0.3
+  backgroundSpeed: 0.5
   bgRenderer: {fileID: 4214377109980555875}
 --- !u!1 &1811363346459298136
 GameObject:
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
   Dino: {fileID: 0}
-  backgroundSpeed: 0.05
+  backgroundSpeed: 0.15
   bgRenderer: {fileID: 8320454890990514834}
 --- !u!1 &4058219943573659275
 GameObject:
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
   Dino: {fileID: 0}
-  backgroundSpeed: 0.1
+  backgroundSpeed: 0.2
   bgRenderer: {fileID: 6470177692113442875}
 --- !u!1 &6149786511813284410
 GameObject:
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::backgroundScript
   Dino: {fileID: 0}
-  backgroundSpeed: 0.075
+  backgroundSpeed: 0.175
   bgRenderer: {fileID: 520741615868322089}
 --- !u!1 &8412049515130344618
 GameObject:
