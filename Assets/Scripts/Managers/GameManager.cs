@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private float scoremultiplier;
@@ -58,6 +60,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void EndRound() {
+        StartCoroutine(swithcScene());
         SaveCoins();
         CheckIfHighscore();
         GameData.Instance.GameRunning = false;
@@ -76,7 +79,16 @@ public class GameManager : MonoBehaviour
     public void SaveCoins()
     {
         GameData.Instance.LastTotalCoins = GameData.Instance.NewTotalCoins;
-        GameData.Instance.NewTotalCoins += GameData.Instance.RoundCoins;
+        GameData.Instance.NewTotalCoins += GameData.Instance.RoundCoins + (int)GameData.Instance.RoundScore/10;
+    }
+    IEnumerator swithcScene()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("MainScreen");
     }
 
+    public void SetNewCoins()
+    {
+        GameData.Instance.NewTotalCoins = GameData.Instance.LastTotalCoins +(int)(GameData.Instance.RoundScore/10);
+    }
 }
