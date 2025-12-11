@@ -8,12 +8,14 @@ public class SettingsUIToggle : MonoBehaviour
     [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject closeSettingsButton;
     [SerializeField] private InputAction escapeAction;
+    
 
     [Header("If in Main Screen")]
     [SerializeField] private GameObject mainScreenPanel;
     [SerializeField] private GameObject shopButtonsPanel;
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private MainScreenUIToggles mainScreenUI;
+    [SerializeField] private GameObject shopStump;
 
     public CharacterEquipment previewCharacter;
 
@@ -52,6 +54,7 @@ public class SettingsUIToggle : MonoBehaviour
             shopButtonsPanel.SetActive(false);
             shopPanel.SetActive(false);
             mainScreenUI.MoveDinosaurBack();
+            shopStump.SetActive(false);
             mainScreenUI.UpdateStatsPanel();
             previewCharacter.ApplyFromData(CharacterEquipmentData.Instance);
         }

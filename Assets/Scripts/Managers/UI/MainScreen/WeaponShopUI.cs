@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System.Reflection;
 
 public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
@@ -14,6 +15,7 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
     [SerializeField] private int[] upgradeCosts; 
 
     [Header("UI")]
+    [SerializeField] private Image weaponIMG;
     [SerializeField] TMP_Text coinsText;
     [SerializeField] private TMP_Text messageText;
     [SerializeField] private TMP_Text upgradeInfoText;
@@ -73,13 +75,14 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
     private void TryUpgradeWeapon()
     {
         int nextTier= GetNextTier();
-        int cost = upgradeCosts[nextTier];
 
         if (nextTier == -1)
         {
             StartCoroutine(ShowMessage("Weapon is already at max level."));
             return;
         }
+
+        int cost = upgradeCosts[nextTier];
 
         if (GameData.Instance == null || CharacterEquipmentData.Instance == null)
         {
@@ -111,9 +114,10 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
             previewCharacter.ApplyWeapon(nextWeapon);
         }
         StartCoroutine(ShowMessage("Weapon upgraded to " + nextWeapon.displayName + "!"));
+        RefreshUpgradeInfo();
     }
 
-    private void RefreshUpgradeInfo()
+    public void RefreshUpgradeInfo()
     {
         if (upgradeInfoText == null)
             return;
@@ -128,6 +132,7 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
         ItemData nextWeapon = weaponTiers[nextIndex];
         int cost = upgradeCosts[nextIndex];
 
+        weaponIMG.sprite = nextWeapon.icon;
         upgradeInfoText.text = cost + " coins";
     }
     
@@ -140,10 +145,11 @@ public class WeaponShopUI : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
     }
 
       private IEnumerator ShowMessage(string msg) {
-        if (messageText != null)
+        if (messageText != null) {
             messageText.text = msg;
             yield return new WaitForSeconds(1f);
             ClearMessage();
+        }
     }
 
       private void ClearMessage()

@@ -1891,7 +1891,7 @@ GameObject:
   - component: {fileID: 473151801}
   - component: {fileID: 473151800}
   m_Layer: 5
-  m_Name: WeaponsUpgradeIMG (1)
+  m_Name: LoadoutShopImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2002,7 +2002,7 @@ GameObject:
   - component: {fileID: 485147005}
   - component: {fileID: 485147004}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: BuySkinsTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2780,6 +2780,7 @@ MonoBehaviour:
   shopButtonsPanel: {fileID: 760707199}
   shopPanel: {fileID: 583435256}
   mainScreenUI: {fileID: 568609907}
+  shopStump: {fileID: 791358691}
   previewCharacter: {fileID: 2099659415}
 --- !u!114 &568609907
 MonoBehaviour:
@@ -2799,6 +2800,8 @@ MonoBehaviour:
   settingsButton: {fileID: 1357719788}
   closeSettingsButton: {fileID: 1451820947}
   playButton: {fileID: 966272963}
+  shopStump: {fileID: 791358691}
+  loadoutCoinsText: {fileID: 1091025680}
   shopButtonsPanel: {fileID: 760707199}
   shopPanel: {fileID: 583435256}
   closeShopButton: {fileID: 1762589324}
@@ -2806,6 +2809,7 @@ MonoBehaviour:
   mainDinoPosition: {x: 0, y: 0, z: 0}
   shopDinoPosition: {x: 0, y: 0, z: 0}
   settingsToggle: {fileID: 568609906}
+  weaponShopUI: {fileID: 747904515}
 --- !u!1 &571114402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,7 +2917,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 791358692}
   - {fileID: 1762589328}
   - {fileID: 1091025679}
   - {fileID: 74426510}
@@ -3961,11 +3964,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00403316108eed4ca144eb68bf603ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponShopUI
-  previewCharacter: {fileID: 0}
+  previewCharacter: {fileID: 2099659415}
   weaponTiers:
   - {fileID: 11400000, guid: e96d0aff6dd620e4ab5df5c4f47b00af, type: 2}
   - {fileID: 11400000, guid: eaa74c2406f187f48b5b7c91c6ca0293, type: 2}
   upgradeCosts: 3200000064000000
+  weaponIMG: {fileID: 615465772}
   coinsText: {fileID: 538724122}
   messageText: {fileID: 1971137611}
   upgradeInfoText: {fileID: 1723851077}
@@ -3997,7 +4001,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2042823389}
   - {fileID: 538724121}
   - {fileID: 747904512}
   - {fileID: 623028672}
@@ -4056,11 +4059,11 @@ GameObject:
   - component: {fileID: 791358693}
   m_Layer: 0
   m_Name: ShopStump
-  m_TagString: Untagged
+  m_TagString: ShopStump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &791358692
 Transform:
   m_ObjectHideFlags: 0
@@ -4070,11 +4073,11 @@ Transform:
   m_GameObject: {fileID: 791358691}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540.05, z: 0}
+  m_LocalPosition: {x: 0, y: -0.049987793, z: 0}
   m_LocalScale: {x: 0.918559, y: 0.9185236, z: 0.86604154}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 583435257}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &791358693
 SpriteRenderer:
@@ -4383,12 +4386,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -8618,8 +8621,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000045776, y: -99}
-  m_SizeDelta: {x: 174.9216, y: 48.2704}
+  m_AnchoredPosition: {x: 0.000076294, y: -115.4}
+  m_SizeDelta: {x: 314.465, y: 69.4938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1723851077
 MonoBehaviour:
@@ -8732,7 +8735,7 @@ GameObject:
   - component: {fileID: 1740902023}
   - component: {fileID: 1740902022}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: UpgradeWeaponTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10037,96 +10040,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024317323}
   m_CullTransparentMesh: 1
---- !u!1 &2042823388
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2042823389}
-  - component: {fileID: 2042823390}
-  m_Layer: 0
-  m_Name: ShopStump
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2042823389
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042823388}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -511.05, z: 0}
-  m_LocalScale: {x: 0.918559, y: 0.9185236, z: 0.86604154}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 760707200}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2042823390
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042823388}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1359974567
-  m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b2b16b4637dbb284e9f079005141f8be, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &2058502490
 GameObject:
   m_ObjectHideFlags: 0
@@ -10609,6 +10522,7 @@ SceneRoots:
   - {fileID: 1345993210}
   - {fileID: 2099659418}
   - {fileID: 1820181688}
+  - {fileID: 791358692}
   - {fileID: 892650729}
   - {fileID: 337487270}
   - {fileID: 471767791}

@@ -11,6 +11,8 @@ public class MainScreenUIToggles : MonoBehaviour
     [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject closeSettingsButton;
     [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject shopStump;
+    [SerializeField] private TextMeshProUGUI loadoutCoinsText;
 
     [Header("Shop Screen Objects")]
     [SerializeField] private GameObject shopButtonsPanel;
@@ -24,6 +26,8 @@ public class MainScreenUIToggles : MonoBehaviour
 
     [Header("Settings script")]
     [SerializeField] private SettingsUIToggle settingsToggle;
+    
+    [SerializeField] private WeaponShopUI weaponShopUI;
    
    void Awake() {
     player = GameObject.FindWithTag("Player");
@@ -32,7 +36,6 @@ public class MainScreenUIToggles : MonoBehaviour
     settingsToggle = GetComponent<SettingsUIToggle>();
     if (GameData.Instance != null) {
     UpdateStatsPanel();
-    
     }
    }
 
@@ -45,6 +48,9 @@ public class MainScreenUIToggles : MonoBehaviour
         shopButtonsPanel.SetActive(true);
         settingsToggle.changeSettingsButton();
         player.transform.position = shopDinoPosition;
+        shopStump.SetActive(true);
+        UpdateCoinsUI();
+        weaponShopUI.RefreshUpgradeInfo();
    }
 
    public void ShowLoadoutShopUI()
@@ -52,6 +58,7 @@ public class MainScreenUIToggles : MonoBehaviour
         mainScreenPanel.SetActive(false);
         shopButtonsPanel.SetActive(false);
         shopPanel.SetActive(true);
+        UpdateCoinsUI();
         //settingsToggle.changeSettingsButton();
     }
 
@@ -61,6 +68,15 @@ public class MainScreenUIToggles : MonoBehaviour
         MoveDinosaurBack();
         UpdateStatsPanel();
     } */
+
+    private void UpdateCoinsUI()
+    {
+        if (coinsText != null && loadoutCoinsText != null && GameData.Instance != null)
+        {
+            coinsText.text = "Coins: " + GameData.Instance.NewTotalCoins;
+            loadoutCoinsText.text = "Coins: " + GameData.Instance.NewTotalCoins;
+        }
+    }
 
     public void MoveDinosaurBack() {
         player.transform.position = mainDinoPosition;

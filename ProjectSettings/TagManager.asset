@@ -15,6 +15,7 @@ TagManager:
   - Shootpos
   - MeteorTarget
   - Coin
+  - ShopStump
   layers:
   - Default
   - TransparentFX

@@ -17,5 +17,5 @@ MonoBehaviour:
   description: 
   category: 2
   equipSlot: 3
-  icon: {fileID: 3415828706568926422, guid: 7d8cb85b9fa04c64d810dc37dc93af9c, type: 3}
+  icon: {fileID: 21300000, guid: 1b03d35d51125c14cbfedb373227ba43, type: 3}
   prefab: {fileID: 5824087332312358463, guid: d85e1438c213eb249b17f46930be7798, type: 3}
