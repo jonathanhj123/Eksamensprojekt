@@ -93,7 +93,7 @@ public class PlayerScript : MonoBehaviour
         {
             GameData.Instance.RoundCoins++;
             SoundFXManager.Instance.PlayCoinSFX();
-            Destroy(collider.gameObject);
+            Destroy(collider.gameObject);   
         }
     }
 }

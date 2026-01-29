@@ -62,10 +62,7 @@ public class GameData : MonoBehaviour
         NewTotalCoins -= amount;
     }
 
-    public void SetNewCoins()
-    {
-        NewTotalCoins = LastTotalCoins +(int)(RoundScore/10);
-    }
+
 
     public void EndRound()
     {
@@ -73,10 +70,5 @@ public class GameData : MonoBehaviour
     }
 
 
-    IEnumerator swithcScene()
-    {
-        yield return new WaitForSeconds(2);
-        SetNewCoins();
-        SceneManager.LoadScene("MainScreen");
-    }
 }
+
